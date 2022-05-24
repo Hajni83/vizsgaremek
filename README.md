@@ -21,3 +21,37 @@ Az oldal jobb alsó sarkában egy gomb jelenik meg, amivel fel lehet scrollozni 
 ```
 
 > A felhasználó be tud jelentkezni az oldalra vagy lehetősége van regisztrálni is.
+
+*Elfogadási kritérium:*
+
+A belépés ikonra kattintás után a bejelentkezés oldalra jut a felhasználó, ahol be kell írnia az email címét és jelszavát. Ezekkel az adatokkal a belépés gombra kattintva tud bejelentkezni.
+Ha még nincs fiókja, akkor a belépés gomb alatt "Hozz létre új fiókot" linken tud regisztrálni.
+
+```sh
+3. Fiókadatok
+```
+
+> A felhasználó adatai jelennek meg.
+
+*Elfogadási kritérium:*
+
+A felhasználó meg tudja tekinteni az adatait: név, cím, telefonszám, email, rendelések, jelszó módosítás és ezeket tudja módosítani és az módosított adatokat menteni.
+
+```sh
+4. Regisztráció oldal
+```
+
+> A felhasználó regisztrálni tudja magát az oldalon.
+
+*Elfogadási kritérium:*
+A felhasználó a vezetéknév, keresztnév, email cím és telefonszám, valamint jelszó létrehozásával tudja magát regisztrálni.
+
+```sh
+5. Minden társasjáték
+```
+
+> .
+
+*Elfogadási kritérium:*
+
+
