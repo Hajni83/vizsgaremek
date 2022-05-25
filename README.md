@@ -50,8 +50,84 @@ A felhasználó a vezetéknév, keresztnév, email cím és telefonszám, valami
 5. Minden társasjáték
 ```
 
-> .
+> Az összes társasjáték megjelenítése
 
 *Elfogadási kritérium:*
 
+Egy kártya formátumban fogja tudni a felhasználó megnézni az összes társasjátékokat. Tud majd lapozni az oldalak között. A kártyákon szerepel a társasjáték fényképe, neve és ára.
 
+
+```sh
+6. Családi társasjáték
+```
+
+> Az családi társasjáték megjelenítése
+
+*Elfogadási kritérium:*
+
+Egy kártya formátumban fogja tudni a felhasználó megnézni a családi társasjátékokat. Tud majd lapozni az oldalak között. A kártyákon szerepel a társasjáték fényképe, neve és ára.
+
+
+```sh
+7. Stratégiai társasjáték
+```
+
+> Az stratégiai társasjáték megjelenítése
+
+*Elfogadási kritérium:*
+
+Egy kártya formátumban fogja tudni a felhasználó megnézni a stratégiai társasjátékokat. Tud majd lapozni az oldalak között. A kártyákon szerepel a társasjáték fényképe, neve és ára.
+
+
+```sh
+6. Party társasjáték
+```
+
+> Az party társasjáték megjelenítése
+
+*Elfogadási kritérium:*
+
+Egy kártya formátumban fogja tudni a felhasználó megnézni a party társasjátékokat. Tud majd lapozni az oldalak között. A kártyákon szerepel a társasjáték fényképe, neve és ára.
+
+```sh
+7. Kártyára kattintás
+```
+
+> A társasjátékot bemutató kártyára kattintás
+
+*Elfogadási kritérium:*
+
+Bármelyik oldalon (főoldal,minden társasjáték, családi, stratégiai, party társasjáték)a adott társasjátékot bemutató kártyára kattintva megjelenik egy másik oldalon a társasjáték fényképe nagyobb méretben és lehet majd nagyítani. Valamint a felhasználó kap egy leírást a játékról, megtalálja az árát és be is tudja egy gomb segítségével tenni a kosárba. A gombra kattintással felugrik egy pop-up, melyben megjelenik, hogy sikeresen bekerült a termék a kosárba és a felhasználó választhat, hogy a tovább a kosárhoz vagy a tovább válogatok gombra kattint. A tovább válogatok gombra kattintva eltűnik a felugró ablak. A tovább a kosárhoz gomb esetében pedig a felhasználó a kosár oldalra navigál.
+
+
+```sh
+8. Kosár
+```
+
+> A kosár tartalmának megjelenítése
+
+*Elfogadási kritérium:*
+
+Megjelenik a felhasználó előtt táblazatos formában a kiválasztott játék neve, egységára, mennyiség, összeg. Az alján a bruttó végösszeg, illetve a szállítási költség.
+A táblázat alatt két gomb látható: 1. a vásárlás folytatása. Akkor visszaugrik a főoldalra. 2. Tovább a pénztárhoz. Itt megjelenik a felhasználó elérhetőségi adatai: név, cím, email, telefonszám.
+Szállítási módok: Házhozszállítás, futárszolgálat. Fizetési mód: Banki átutalás, Utánvétel. Majd a jobb alsó sarokban lévő gombra kattinva (tovább az összegzéshez) megjelenik az összegzés oldal.
+
+```sh
+8. Összegzés
+```
+
+> A rendelés adatainak összegzése
+
+*Elfogadási kritérium:*
+
+Megjelenik a felhasználó neve, címe, telefonszáma, email címe, kiválasztott szállítási mód, fizetés. Itt a felhasználónak lehetősége lesz egy Módosítás gombra kattintani, ha nem egyeznek meg az adatok. Megjelenik a termék neve, ára, mennyiség, fizetendő összeg, majd a végén a megrendelem gombra kattintva lezárul a rendelés, melyet egy felugró ablak erősít meg és visszaugrik a főoldalra.
+
+```sh
+9. Módosítás
+```
+
+> A rendelés adatainak módosítása
+
+*Elfogadási kritérium:*
+
+A rendelés adatainak összegzése oldalon amennyiben a felhasználó módosítani szeretne az adatokon, akkor egy kártya formátumú ablak jelenik meg, ahol át tudja írni a módosítandó adatokat és az alján a Módosítás gombra kattintva elmenti az új adatot.
