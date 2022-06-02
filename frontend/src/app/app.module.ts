@@ -5,15 +5,18 @@ import { AlertModule } from '@coreui/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavModule } from '@coreui/angular';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import { GridModule, CarouselModule,CardModule, FooterModule   } from '@coreui/angular';
+import { GridModule, CarouselModule,CardModule, FooterModule,ImgModule,NavModule,HeaderModule, FormModule, ButtonModule} from '@coreui/angular';
 import { HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './page/login/login.component';
+import { HomeComponent } from './page/home/home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,10 @@ import { HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     CardModule,
     FooterModule,
+    ImgModule,
+    FormModule,
+    ButtonModule,
+    HeaderModule
   ],
   providers: [ IconSetService],
   bootstrap: [AppComponent]

@@ -1,0 +1,150 @@
+<c-header-nav class="d-none d-lg-flex me-auto">
+  <c-nav-item>
+    <a cNavLink routerLink="/dashboard" routerLinkActive="active">
+      Dashboard
+    </a>
+  </c-nav-item>
+  <c-nav-item>
+    <a cNavLink routerLink="/users" routerLinkActive="active">Users</a>
+  </c-nav-item>
+  <c-nav-item>
+    <a cNavLink routerLink="/settings" routerLinkActive="active">
+      Settings
+    </a>
+  </c-nav-item>
+</c-header-nav>
+<c-container>
+  <c-row class="align-items-start px-5 mx-5">
+    <c-col class="pt-5">
+      <h1>Board Games</h1>
+      <h3>webshop</h3>
+    </c-col>
+    <c-col class="pt-5">
+      <c-nav class="justify-content-center">
+        <c-nav-item>
+          <a [active]="true" [routerLink] cNavLink> Családi Játékok </a>
+        </c-nav-item>
+        <c-nav-item>
+          <a [routerLink] cNavLink>Stratégiai Játékok</a>
+        </c-nav-item>
+        <c-nav-item>
+          <a [routerLink] cNavLink>Party Játékok</a>
+        </c-nav-item>
+        <c-nav-item>
+          <a [routerLink] cNavLink>Akciós Játékok</a>
+        </c-nav-item>
+      </c-nav>
+    </c-col>
+    <c-col class="pt-5">
+      <svg
+        class="mx-5"
+        cIcon
+        name="cilSearch"
+        size="xl"
+        title="Numbered List Icon"
+      ></svg>
+      <svg
+        class="mx-5"
+        cIcon
+        name="cilCart"
+        size="xl"
+        title="Numbered List Icon"
+      ></svg>
+      <svg
+        class="mx-5"
+        cIcon
+        name="cilUser"
+        size="xl"
+        title="Numbered List Icon"
+      ></svg>
+    </c-col>
+  </c-row>
+</c-container>
+<c-carousel id="carousel">
+  <c-carousel-indicators></c-carousel-indicators>
+  <c-carousel-inner>
+    <c-carousel-item *ngFor="let slide of slides">
+      <img
+        [src]="slide.src"
+        alt="{{ slide.title }}"
+        class="d-block w-100"
+        loading="lazy" />
+    </c-carousel-item>
+  </c-carousel-inner>
+  <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+  <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+</c-carousel>
+<h1 class="text-center py-5">Legújabb termékek</h1>
+<c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
+  <c-col *ngFor="let card of cards; index as i">
+    <c-card class="h-100" type="color:red textColor:red">
+      <img cCardImg="top" src="./assets/img/angular.jpg" />
+      <c-card-body>
+        <h5 cCardTitle>Card title</h5>
+        <p cCardText>
+          {{ card.body }}
+        </p>
+      </c-card-body>
+      <c-card-footer>
+        <small class="text-medium-emphasis"
+          >Last updated {{ i + 10 }} mins ago</small
+        >
+      </c-card-footer>
+    </c-card>
+  </c-col>
+</c-row>
+<c-footer class="hidden-print">
+  <c-container class="px-4">
+    <c-row [gutter]="{gx: 5}">
+      <c-col class="text-center">
+        <div class="p-3 border bg-light"><h3>Elérhetőség</h3>
+          <p>
+            <svg
+              class="mx-5"
+              cIcon
+              name="cilPhone"
+              size="xl"
+              title="Numbered List Icon"
+            ></svg
+            >+3660/000-0000
+          </p>
+          <p>
+            <svg
+              class="mx-5"
+              cIcon
+              name="cilEnvelopeClosed"
+              size="xl"
+              title="Numbered List Icon"
+            ></svg
+            >jatek@jatek.hu
+          </p>
+          <p>
+            <img
+              src="../assets/images/visaCard.png"
+              style="width: 400px; height: 42px"
+            />
+          </p></div>
+      </c-col>
+      <c-col class="text-center">
+        <div class="p-3 border bg-light">   <h3>Információk</h3>
+          <p>
+            <a href="#">ÁSZF</a>
+          </p>
+          <p>
+            <a href="#">Adatkezelési tájékoztató</a>
+          </p>
+          <p>
+            <a href="#">Fizetés,szállítás</a>
+          </p>
+        <p>
+          <a href="#">Facebook</a>
+        </p></div>
+      </c-col>
+    </c-row>
+  </c-container>
+  <c-container fluid class="text-center">
+    © Board Game Webshop 2022
+  </c-container>
+
+</c-footer>
+
