@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import { GridModule, CarouselModule,CardModule, FooterModule,ImgModule,NavModule,HeaderModule, FormModule, ButtonModule} from '@coreui/angular';
+import { GridModule, CarouselModule,CardModule, FooterModule,ImgModule,NavModule,PaginationModule, HeaderModule, FormModule, ButtonModule} from '@coreui/angular';
 import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './page/login/login.component';
 import { HomeComponent } from './page/home/home.component';
@@ -45,7 +45,8 @@ import { FooterComponent } from './page/footer/footer.component';
     ImgModule,
     FormModule,
     ButtonModule,
-    HeaderModule
+    HeaderModule,
+    PaginationModule 
   ],
   providers: [ IconSetService],
   bootstrap: [AppComponent]
