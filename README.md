@@ -109,8 +109,7 @@ Bármelyik oldalon (főoldal,minden társasjáték, családi, stratégiai, party
 *Elfogadási kritérium:*
 
 Megjelenik a felhasználó előtt táblazatos formában a kiválasztott játék neve, egységára, mennyiség, összeg. Az alján a bruttó végösszeg, illetve a szállítási költség.
-A táblázat alatt két gomb látható: 1. a vásárlás folytatása. Akkor visszaugrik a főoldalra. 2. Tovább a pénztárhoz. Itt megjelenik a felhasználó elérhetőségi adatai: név, cím, email, telefonszám.
-Szállítási módok: Házhozszállítás, futárszolgálat. Fizetési mód: Banki átutalás, Utánvétel. Majd a jobb alsó sarokban lévő gombra kattinva (tovább az összegzéshez) megjelenik az összegzés oldal.
+A táblázat alatt két gomb látható: 1. a vásárlás folytatása. Akkor visszaugrik a főoldalra. 2. Fizetek. Felugrik egy pop-up, hogy köszönjük, hogy nálunk vásárolt és visszairányít a főoldalra.
 
 ```sh
 11. Összegzés
