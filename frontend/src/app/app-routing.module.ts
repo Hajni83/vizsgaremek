@@ -1,3 +1,7 @@
+import { ActionComponent } from './page/action/action.component';
+import { PartyComponent } from './page/party/party.component';
+import { StrategyComponent } from './page/strategy/strategy.component';
+import { FamilyComponent } from './page/family/family.component';
 import { HomeComponent } from './page/home/home.component';
 import { LoginComponent } from './page/login/login.component';
 import { AppComponent } from './app.component';
@@ -12,7 +16,27 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
-  }
+  },
+  {
+    path:'login',
+    component:LoginComponent
+  },
+  {
+    path:'family',
+    component:FamilyComponent
+  },
+  {
+    path:'strategy',
+    component:StrategyComponent
+  },
+  {
+    path:'party',
+    component:PartyComponent
+  },
+  {
+    path:'action',
+    component:ActionComponent
+  },
 ];
 
 @NgModule({

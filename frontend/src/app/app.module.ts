@@ -10,13 +10,25 @@ import { GridModule, CarouselModule,CardModule, FooterModule,ImgModule,NavModule
 import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './page/login/login.component';
 import { HomeComponent } from './page/home/home.component';
+import { FamilyComponent } from './page/family/family.component';
+import { StrategyComponent } from './page/strategy/strategy.component';
+import { PartyComponent } from './page/party/party.component';
+import { ActionComponent } from './page/action/action.component';
+import { HeaderComponent } from './page/header/header.component';
+import { FooterComponent } from './page/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    FamilyComponent,
+    StrategyComponent,
+    PartyComponent,
+    ActionComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
