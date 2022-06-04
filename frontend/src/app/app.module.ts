@@ -16,6 +16,7 @@ import { PartyComponent } from './page/party/party.component';
 import { ActionComponent } from './page/action/action.component';
 import { HeaderComponent } from './page/header/header.component';
 import { FooterComponent } from './page/footer/footer.component';
+import { CartComponent } from './page/cart/cart.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FooterComponent } from './page/footer/footer.component';
     PartyComponent,
     ActionComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

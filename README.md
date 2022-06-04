@@ -80,7 +80,7 @@ Egy kártya formátumban fogja tudni a felhasználó megnézni a stratégiai tá
 
 
 ```sh
-6. Party társasjáték
+8. Party társasjáték
 ```
 
 > Az party társasjáték megjelenítése
@@ -90,7 +90,7 @@ Egy kártya formátumban fogja tudni a felhasználó megnézni a stratégiai tá
 Egy kártya formátumban fogja tudni a felhasználó megnézni a party társasjátékokat. Tud majd lapozni az oldalak között. A kártyákon szerepel a társasjáték fényképe, neve és ára.
 
 ```sh
-7. Kártyára kattintás
+9. Kártyára kattintás
 ```
 
 > A társasjátékot bemutató kártyára kattintás
@@ -101,7 +101,7 @@ Bármelyik oldalon (főoldal,minden társasjáték, családi, stratégiai, party
 
 
 ```sh
-8. Kosár
+10. Kosár
 ```
 
 > A kosár tartalmának megjelenítése
@@ -113,7 +113,7 @@ A táblázat alatt két gomb látható: 1. a vásárlás folytatása. Akkor viss
 Szállítási módok: Házhozszállítás, futárszolgálat. Fizetési mód: Banki átutalás, Utánvétel. Majd a jobb alsó sarokban lévő gombra kattinva (tovább az összegzéshez) megjelenik az összegzés oldal.
 
 ```sh
-8. Összegzés
+11. Összegzés
 ```
 
 > A rendelés adatainak összegzése
@@ -123,7 +123,7 @@ Szállítási módok: Házhozszállítás, futárszolgálat. Fizetési mód: Ban
 Megjelenik a felhasználó neve, címe, telefonszáma, email címe, kiválasztott szállítási mód, fizetés. Itt a felhasználónak lehetősége lesz egy Módosítás gombra kattintani, ha nem egyeznek meg az adatok. Megjelenik a termék neve, ára, mennyiség, fizetendő összeg, majd a végén a megrendelem gombra kattintva lezárul a rendelés, melyet egy felugró ablak erősít meg és visszaugrik a főoldalra.
 
 ```sh
-9. Módosítás
+12. Módosítás
 ```
 
 > A rendelés adatainak módosítása

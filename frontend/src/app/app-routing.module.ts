@@ -1,3 +1,4 @@
+import { CartComponent } from './page/cart/cart.component';
 import { ActionComponent } from './page/action/action.component';
 import { PartyComponent } from './page/party/party.component';
 import { StrategyComponent } from './page/strategy/strategy.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:'action',
     component:ActionComponent
+  },
+  {
+    path:'cart',
+    component:CartComponent
   },
 ];
 

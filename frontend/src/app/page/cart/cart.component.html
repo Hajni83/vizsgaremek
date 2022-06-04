@@ -1,0 +1,31 @@
+<app-header></app-header>
+<c-container>
+  <h1>Kosár</h1>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>Kép</th>
+          <th>Név</th>
+          <th>Egységár</th>
+          <th>Mennyiség</th>
+          <th>Összeg</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of cartContent">
+          <td></td>
+          <td>{{row.name}}</td>
+          <td>{{row.price}}</td>
+          <td>{{row.quantity}}</td>
+          <td>{{row.sum}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Összesen</h2>
+    <p>5632Ft</p>
+    <button>Fizetek</button>
+    <button>Vásárlás folytatása</button>
+  </div>
+</c-container>
+<app-footer></app-footer>
