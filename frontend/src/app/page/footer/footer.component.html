@@ -1,8 +1,9 @@
 <c-footer class="hidden-print">
   <c-container class="px-4">
-    <c-row [gutter]="{gx: 5}">
+    <c-row [gutter]="{ gx: 5 }">
       <c-col class="text-center">
-        <div class="p-3 border bg-light"><h3>Elérhetőség</h3>
+        <div class="p-3 border bg-light">
+          <h3>Elérhetőség</h3>
           <p>
             <svg
               class="mx-5"
@@ -28,10 +29,12 @@
               src="../assets/images/visaCard.png"
               style="width: 400px; height: 42px"
             />
-          </p></div>
+          </p>
+        </div>
       </c-col>
       <c-col class="text-center">
-        <div class="p-3 border bg-light">   <h3>Információk</h3>
+        <div class="p-3 border bg-light">
+          <h3>Információk</h3>
           <p>
             <a href="#">ÁSZF</a>
           </p>
@@ -41,16 +44,18 @@
           <p>
             <a href="#">Fizetés,szállítás</a>
           </p>
-        <p>
-          <a href="#">Facebook</a>
-        </p></div>
+          <div class="d-flex justify-content-lg-around">
+            <p>
+              <a href="#" class="fa fa-facebook"></a>
+            </p>
+            <p><a href="#" class="fa fa-twitter"></a></p>
+          </div>
+
+        </div>
       </c-col>
     </c-row>
   </c-container>
   <c-container fluid class="text-center">
     © Board Game Webshop 2022
   </c-container>
-
 </c-footer>
-
-

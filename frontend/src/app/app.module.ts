@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule } from '@coreui/angular';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { ActionComponent } from './page/action/action.component';
 import { HeaderComponent } from './page/header/header.component';
 import { FooterComponent } from './page/footer/footer.component';
 import { CartComponent } from './page/cart/cart.component';
+import { SearchPipe } from './pipe/search.pipe';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { CartComponent } from './page/cart/cart.component';
     ActionComponent,
     HeaderComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,9 @@ import { CartComponent } from './page/cart/cart.component';
     FormModule,
     ButtonModule,
     HeaderModule,
-    PaginationModule 
+    PaginationModule,
+    FormsModule,
+  
   ],
   providers: [ IconSetService],
   bootstrap: [AppComponent]
