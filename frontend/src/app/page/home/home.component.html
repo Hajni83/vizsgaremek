@@ -1,38 +1,43 @@
 
 
 <app-header></app-header>
+<c-container>
+  
+  <c-carousel id="carousel">
+    <c-carousel-indicators></c-carousel-indicators>
+    <c-carousel-inner>
+      <c-carousel-item *ngFor="let slide of slides">
+        <img
+          [src]="slide.src"
+          alt="{{ slide.title }}"
+          class="d-block w-100"
+          loading="lazy" />
+      </c-carousel-item>
+    </c-carousel-inner>
+    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+  </c-carousel>
 
-<c-carousel id="carousel">
-  <c-carousel-indicators></c-carousel-indicators>
-  <c-carousel-inner>
-    <c-carousel-item *ngFor="let slide of slides">
-      <img
-        [src]="slide.src"
-        alt="{{ slide.title }}"
-        class="d-block w-100"
-        loading="lazy" />
-    </c-carousel-item>
-  </c-carousel-inner>
-  <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
-  <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
-</c-carousel>
-<h1 class="text-center py-5">Legújabb termékek</h1>
-<c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
-  <c-col *ngFor="let card of cards; index as i">
-    <c-card class="h-100" type="color:red textColor:red">
-      <img cCardImg="top" src="./assets/img/angular.jpg" />
-      <c-card-body>
-        <h5 cCardTitle>Card title</h5>
-        <p cCardText>
-          {{ card.body }}
-        </p>
-      </c-card-body>
-      <c-card-footer>
-        <small class="text-medium-emphasis"
-          >Last updated {{ i + 10 }} mins ago</small
-        >
-      </c-card-footer>
-    </c-card>
-  </c-col>
-</c-row>
+  <h1 class="text-center py-5">Legújabb termékek</h1>
+
+  <c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
+    <c-col *ngFor="let card of cards; index as i">
+      <c-card class="h-100" type="color:red textColor:red">
+        <img cCardImg="top" src="./assets/img/angular.jpg" />
+        <c-card-body>
+          <h5 cCardTitle>Card title</h5>
+          <p cCardText>
+            {{ card.body }}
+          </p>
+        </c-card-body>
+        <c-card-footer>
+          <small class="text-medium-emphasis"
+            >Last updated {{ i + 10 }} mins ago</small
+          >
+        </c-card-footer>
+      </c-card>
+    </c-col>
+  </c-row>
+
+</c-container>
 <app-footer></app-footer>

@@ -1,67 +1,62 @@
-<c-row class="align-items-start px-5 mx-5">
-  <c-col class="pt-5 col-2">
-    <a href="">
-    <img cImg height="300" rounded src="../../../assets/images/logo.png" thumbnail width="300" /></a>
+<c-container>
+  <c-row class="align-items-start">
 
+    <c-col class="col-12 col-sm-3 col-lg-2">
+      <a href="" >
+        <img cImg rounded src="../../../assets/images/logo.png" thumbnail style="height:56px"/>
+      </a>
+    </c-col>
 
-  </c-col>
-  <c-col class="pt-5 col-4">
-    <c-header-nav class="d-none d-lg-flex me-auto">
-      <c-nav-item>
-        <a cNavLink routerLink="/family" routerLinkActive="active">
-          Családi Játékok
-        </a>
-      </c-nav-item>
-      <c-nav-item>
-        <a cNavLink routerLink="/strategy" routerLinkActive="active"
-          >Stratégiai Játékok</a
-        >
-      </c-nav-item>
-      <c-nav-item>
-        <a cNavLink routerLink="/party" routerLinkActive="active">
-          Party Játékok
-        </a>
-      </c-nav-item>
-      <c-nav-item>
-        <a cNavLink routerLink="/action" routerLinkActive="active">
-          Akciós Játékok
-        </a>
-      </c-nav-item>
-    </c-header-nav>
-  </c-col>
-  <div class="form-group col-2">
-    <ul class="list-group list-group-flush">
-      <li
-        class="list-group-item"
-        *ngFor="let c of characters | search: searchText"
-      >
-        {{ c }}
-      </li>
-    </ul>
-    <input
-      type="search"
-      aria-label="search"
-      placeholder="Search"
-      [(ngModel)]="searchText"
-    />
-  </div>
+    <c-col>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <a class="col-2" routerLink="/cart"
-    ><svg
-      class="mx-5"
-      cIcon
-      name="cilCart"
-      size="xl"
-      title="Numbered List Icon"
-    ></svg
-  ></a>
-  <a class="col-2" href="/login"
-    ><svg
-      class="mx-5"
-      cIcon
-      name="cilUser"
-      size="xl"
-      title="Numbered List Icon"
-    ></svg
-  ></a>
-</c-row>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <a routerLink="/cart"
+          ><svg
+            class="mx-2" cIcon
+            name="cilCart" size="xl"
+            title="Numbered List Icon"
+          ></svg
+        ></a>
+        <a routerLink="/login"
+          ><svg
+            class="mx-2" cIcon
+            name="cilUser" size="xl"
+            title="Numbered List Icon"
+          ></svg
+        ></a>
+        </div>
+      </nav>
+    </c-col>
+  </c-row>
+</c-container>
