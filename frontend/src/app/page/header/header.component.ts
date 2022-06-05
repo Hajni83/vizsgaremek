@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SearchPipe } from 'src/app/pipe/search.pipe';
+
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,14 @@ import { SearchPipe } from 'src/app/pipe/search.pipe';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
   searchText = '';
+  @Output() searchTextEmitter = new EventEmitter<string>();
+
+  search($event: string | undefined){
+    this.searchTextEmitter.emit($event);
+  }
+
   characters = [
     // 'Ant-Man',
     // 'Aquaman',

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-family',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./family.component.scss'],
 })
 export class FamilyComponent implements OnInit {
-  cards = Array.from({length: 40}, () => ({body: Math.floor(Math.random() * 40)}));
+  cards = Array.from({length: 40}, () => ({name: "aaa"}));
+  searchText:string='';
 
   pageSize: number = 10;
   startSlice: number = 0;
@@ -16,6 +18,10 @@ export class FamilyComponent implements OnInit {
   get pageCard(): number[] {
     const pageSize = Math.ceil(this.cards.length / this.pageSize);
     return new Array(pageSize).fill(1).map((item, index) => index + 1);
+  }
+
+  onSearch(searchText:string){
+    this.searchText=searchText
   }
 
   constructor() {}

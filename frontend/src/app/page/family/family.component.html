@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (searchTextEmitter)="onSearch($event)"></app-header>
 
 <c-container>
   <h1 class="text-center py-5">Családi Játékok</h1>
@@ -14,13 +14,13 @@
     </li>
   </c-pagination>
   <c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
-    <c-col *ngFor="let card of cards | slice:startSlice:endSlice; index as i">
+    <c-col *ngFor="let card of cards | search:searchText | slice:startSlice:endSlice; index as i ">
       <c-card class="h-100" type="color:red textColor:red">
         <img cCardImg="top" src="./assets/img/angular.jpg" />
         <c-card-body>
           <h5 cCardTitle>Card title</h5>
           <p cCardText>
-            {{ card.body }}
+            {{ card.name }}
           </p>
         </c-card-body>
         <c-card-footer>

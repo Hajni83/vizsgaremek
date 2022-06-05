@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   title = 'vizsgaremek';
   slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
   products!: Product[];
-  cards = new Array(4).fill({body: ''});
+  cards = new Array(4).fill({name: ''});
 
   categories: Observable<Category[]>  = this.categoryService.getAll();
   constructor(
@@ -44,11 +44,11 @@ export class HomeComponent implements OnInit {
      this.productService.getAll().subscribe(products => {
       this.products = products;
     });
-    this.cards[0] = { body: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'}
-    this.cards[1] = { body: 'This card has supporting text below as a natural lead-in to additional content.'}
-    this.cards[2] = { body: 'This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.'}
-    this.cards[3] = { body: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'}
-    this.cards[4] = { body: 'This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.'}
-    this.cards[5] = { body: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'}
+    this.cards[0] = { name: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'}
+    this.cards[1] = { name: 'This card has supporting text below as a natural lead-in to additional content.'}
+    this.cards[2] = { name: 'This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.'}
+    this.cards[3] = { name: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'}
+    this.cards[4] = { name: 'This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.'}
+    this.cards[5] = { name: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'}
   }
 }
