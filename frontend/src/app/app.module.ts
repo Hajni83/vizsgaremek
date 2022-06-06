@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import { GridModule, CarouselModule,CardModule, FooterModule,ImgModule,NavModule,PaginationModule, HeaderModule, FormModule, ButtonModule} from '@coreui/angular';
+import { GridModule, CarouselModule,CardModule,TooltipModule, FooterModule,ImgModule,NavModule,PaginationModule, HeaderModule, FormModule, ButtonModule} from '@coreui/angular';
 import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './page/login/login.component';
 import { HomeComponent } from './page/home/home.component';
@@ -19,6 +19,7 @@ import { HeaderComponent } from './page/header/header.component';
 import { FooterComponent } from './page/footer/footer.component';
 import { CartComponent } from './page/cart/cart.component';
 import { SearchPipe } from './pipe/search.pipe';
+import { CardDetailComponent } from './page/card-detail/card-detail.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SearchPipe } from './pipe/search.pipe';
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    SearchPipe
+    SearchPipe,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { SearchPipe } from './pipe/search.pipe';
     HeaderModule,
     PaginationModule,
     FormsModule,
-  
+    TooltipModule
+
   ],
   providers: [ IconSetService],
   bootstrap: [AppComponent]

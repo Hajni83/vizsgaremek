@@ -1,13 +1,23 @@
 import { Component, OnInit, Output } from '@angular/core';
 
 
+
 @Component({
   selector: 'app-family',
   templateUrl: './family.component.html',
   styleUrls: ['./family.component.scss'],
 })
 export class FamilyComponent implements OnInit {
-  cards = Array.from({length: 40}, () => ({name: "aaa"}));
+  cards = Array.from({length: 40}, () => ([{
+    imgUrl:"",
+    name: "",
+     price:''
+   },
+  {
+    imgUrl:"",
+    name: "",
+    price:""
+  }]));
   searchText:string='';
 
   pageSize: number = 10;
@@ -24,9 +34,19 @@ export class FamilyComponent implements OnInit {
     this.searchText=searchText
   }
 
+  colors = [
+    { color: 'secondary', textColor: 'secondary' },
+    { color: 'danger', textColor: 'danger' },
+    { color: 'warning', textColor: 'warning' },
+    { color: 'light' },
+    { color: 'dark' }
+  ];
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   jumpToPage(pageNum: number): void {
     this.page=pageNum;

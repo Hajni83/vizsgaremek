@@ -1,3 +1,4 @@
+import { CardDetailComponent } from './page/card-detail/card-detail.component';
 import { CartComponent } from './page/cart/cart.component';
 import { ActionComponent } from './page/action/action.component';
 import { PartyComponent } from './page/party/party.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path:'cart',
     component:CartComponent
+  },
+  {
+    path:'card-detail',
+    component:CardDetailComponent
   },
 ];
 

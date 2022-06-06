@@ -24,8 +24,20 @@
     </table>
     <h2>Összesen</h2>
     <p>5632Ft</p>
-    <button>Fizetek</button>
-    <button>Vásárlás folytatása</button>
+    <button
+  [cTooltip]="tooltipContent"
+  cButton
+  cTooltipPlacement="right"
+  cTooltipTrigger="click"
+  class="me-1"
+  color="dark">
+ Fizetek
+  <ng-template #tooltipContent>
+    Köszönjük, <span cTextColor="success">hogy</span> nálunk <i cTextColor="warning">vásárolt</i>.
+  </ng-template>
+</button>
+
+    <button cButton color="secondary" routerLink="/">Vásárlás folytatása</button>
   </div>
 </c-container>
 <app-footer></app-footer>

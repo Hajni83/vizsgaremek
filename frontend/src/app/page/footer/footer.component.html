@@ -1,7 +1,7 @@
-<c-footer class="hidden-print">
-  <c-container class="px-4">
-    <c-row [gutter]="{ gx: 5 }">
-      <c-col class="text-center">
+<c-footer class="hidden-print justify-content-around">
+  <c-container class="px-4 row1">
+    <!-- <c-row [gutter]="{ gx: 5 }" class=""> -->
+      <c-col class="text-center flex-row">
         <div class="p-3 border bg-light">
           <h3>Elérhetőség</h3>
           <p>
@@ -27,25 +27,25 @@
           <p>
             <img
               src="../assets/images/visaCard.png"
-              style="width: 400px; height: 42px"
+              style="width: 100%; height: 100%"
             />
           </p>
         </div>
       </c-col>
-      <c-col class="text-center">
+      <c-col class="text-center flex-row">
         <div class="p-3 border bg-light">
           <h3>Információk</h3>
-          <p>
-            <a href="#">ÁSZF</a>
+          <p >
+            <a class="text-dark text-decoration-none" href="#">ÁSZF</a>
           </p>
           <p>
-            <a href="#">Adatkezelési tájékoztató</a>
+            <a class="text-dark text-decoration-none" href="#">Adatkezelési tájékoztató</a>
           </p>
           <p>
-            <a href="#">Fizetés,szállítás</a>
+            <a class="text-dark text-decoration-none" href="#">Fizetés,szállítás</a>
           </p>
           <div class="d-flex justify-content-lg-around">
-            <p>
+            <p class="padding">
               <a target="_blank" href="https://www.facebook.com/" class="fa fa-facebook"></a>
             </p>
             <p><a target="_blank" href="https://twitter.com/?lang=hu" class="fa fa-twitter"></a></p>
@@ -53,7 +53,7 @@
 
         </div>
       </c-col>
-    </c-row>
+    <!-- </c-row> -->
   </c-container>
   <c-container fluid class="text-center">
     © Board Game Webshop 2022

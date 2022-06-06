@@ -14,9 +14,11 @@
     </li>
   </c-pagination>
   <c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
-    <c-col *ngFor="let card of cards | search:searchText | slice:startSlice:endSlice; index as i ">
-      <c-card class="h-100" type="color:red textColor:red">
-        <img cCardImg="top" src="./assets/img/angular.jpg" />
+    <c-col *ngFor="let card of cards| search:searchText | slice:startSlice:endSlice; index as i ">
+      <c-card class="h-100" routerLink="/card-detail">
+
+        <img cCardImg="top" src="card.imgUrl" >
+
         <c-card-body>
           <h5 cCardTitle>Card title</h5>
           <p cCardText>

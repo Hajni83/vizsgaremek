@@ -1,0 +1,18 @@
+$max:992px;
+$percent:70%;
+
+@media screen and (max-width:$max) {
+  .padding{
+    padding-right: $percent;
+  }
+}
+
+.row1 {
+  display:flex;
+};
+
+.flex-row {
+flex:1;
+
+}
+
