@@ -5,8 +5,8 @@ import { cilCart,cilSearch,cilUser,cilPhone,cilEnvelopeClosed } from '@coreui/ic
 import { Observable } from 'rxjs';
 import { Product } from '../../model/product';
 import { Category } from '../../model/category';
-import { CategoryService } from '../../service/category.service';
-import { ProductService } from '../../service/product.service';
+// import { CategoryService } from '../../service/category.service';
+// import { ProductService } from '../../service/product.service';
 
 @Component({
   selector: 'app-home',
@@ -20,11 +20,11 @@ export class HomeComponent implements OnInit {
   products!: Product[];
   cards = new Array(4).fill({name: ''});
 
-  categories: Observable<Category[]>  = this.categoryService.getAll();
+  // categories: Observable<Category[]>  = this.categoryService.getAll();
   constructor(
     public iconSet: IconSetService,
-    private productService:ProductService,
-    private categoryService: CategoryService
+    // private productService:ProductService,
+    // private categoryService: CategoryService
   ) {
     iconSet.icons = { cilCart, cilSearch,cilUser,cilPhone,cilEnvelopeClosed};
   }
@@ -41,9 +41,9 @@ export class HomeComponent implements OnInit {
     }
 
      //FYI: itt iratkozok fel, nem async-el a view-ben mert több helyen is használjuk a products tömböt.
-     this.productService.getAll().subscribe(products => {
-      this.products = products;
-    });
+    //  this.productService.getAll().subscribe(products => {
+    //   this.products = products;
+    // });
     this.cards[0] = { name: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.'}
     this.cards[1] = { name: 'This card has supporting text below as a natural lead-in to additional content.'}
     this.cards[2] = { name: 'This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.'}
