@@ -15,29 +15,26 @@
       <tbody>
         <tr *ngFor="let row of cartContent">
           <td></td>
-          <td>{{row.name}}</td>
-          <td>{{row.price}}</td>
-          <td>{{row.quantity}}</td>
-          <td>{{row.sum}}</td>
+          <td>{{ row.name }}</td>
+          <td>{{ row.price }}</td>
+          <td>{{ row.quantity }}</td>
+          <td>{{ row.sum }}</td>
         </tr>
       </tbody>
     </table>
     <h2>Összesen</h2>
     <p>5632Ft</p>
     <button
-  [cTooltip]="tooltipContent"
-  cButton
-  cTooltipPlacement="right"
-  cTooltipTrigger="click"
-  class="me-1"
-  color="dark">
- Fizetek
-  <ng-template #tooltipContent>
-    Köszönjük, <span cTextColor="success">hogy</span> nálunk <i cTextColor="warning">vásárolt</i>.
-  </ng-template>
-</button>
+      cButton
+      class="me-1"
+      color="dark"
+      (click)="onClick()"
+    >Fizetek
+    </button>
 
-    <button cButton color="secondary" routerLink="/">Vásárlás folytatása</button>
+    <button cButton color="secondary" routerLink="/">
+      Vásárlás folytatása
+    </button>
   </div>
 </c-container>
 <app-footer></app-footer>

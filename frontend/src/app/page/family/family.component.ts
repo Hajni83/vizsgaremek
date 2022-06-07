@@ -1,3 +1,4 @@
+import { Product } from './../../model/product';
 import { Component, OnInit, Output } from '@angular/core';
 
 
@@ -8,16 +9,20 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./family.component.scss'],
 })
 export class FamilyComponent implements OnInit {
-  cards = Array.from({length: 40}, () => ([{
-    imgUrl:"",
-    name: "",
-     price:''
+  cards:Product[] = [{
+    id:0,
+    image:"./assets/images/cafe1.jpg",
+    name: "Café",
+    description: "Café társasjáték nagycsaládosoknak.",
+    price:1
    },
   {
-    imgUrl:"",
-    name: "",
-    price:""
-  }]));
+    id:1,
+    image:"./assets/images/co2.jpg",
+    name: "CO2",
+    description: "CO2 társasjáték környezettudatos családoknak.",
+    price:2
+  }];
   searchText:string='';
 
   pageSize: number = 10;

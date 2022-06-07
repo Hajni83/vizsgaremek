@@ -1,0 +1,14 @@
+<c-card class="h-100" routerLink="/card-detail" [cBorder]="'danger'" [textColor]="'danger'" class="mb-3">
+  <img cCardImg="top" [src]="card.image" >
+  <c-card-body>
+    <h5 cCardTitle>{{ card.name }}</h5>
+    <p cCardText>
+      {{ card.description }}
+    </p>
+  </c-card-body>
+  <c-card-footer>
+    <small class="text-medium-emphasis">
+      Last updated {{ i + 10 }} mins ago
+    </small>
+  </c-card-footer>
+</c-card>
