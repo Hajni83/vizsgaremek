@@ -1,5 +1,6 @@
-<c-card class="h-100" routerLink="/card-detail" [cBorder]="'danger'" [textColor]="'danger'" class="mb-3">
-  <img cCardImg="top" [src]="card.image" >
+<c-container class="row">
+<c-card class="d-flex align-self-stretch" style="cursor:pointer" routerLink="/card-detail" [cBorder]="'danger'" [textColor]="'danger'">
+  <img cCardImg="top" [src]="card.image">
   <c-card-body>
     <h5 cCardTitle>{{ card.name }}</h5>
     <p cCardText>
@@ -12,3 +13,4 @@
     </small>
   </c-card-footer>
 </c-card>
+</c-container>
