@@ -23,10 +23,11 @@
     "@coreui/icons": "^2.1.0",
     "@coreui/icons-angular": "^3.0.0",
     "bootstrap": "^4.6.1",
+    "font-awesome": "^4.7.0",
+    "json-server-auth": "^2.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "font-awesome": "^4.7.0"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.3",

@@ -1,6 +1,5 @@
 import { ChangeDetectorRef, Component,ElementRef,OnInit, ViewChild } from '@angular/core';
-import { IconSetService } from '@coreui/icons-angular';
-import { cilCart,cilSearch,cilUser,cilPhone,cilEnvelopeClosed } from '@coreui/icons';
+
 import { Observable } from 'rxjs';
 import { Product } from '../../model/product';
 import { Category } from '../../model/category';
@@ -33,12 +32,11 @@ export class HomeComponent implements OnInit {
 
   // categories: Observable<Category[]>  = this.categoryService.getAll();
   constructor(
-    public iconSet: IconSetService,
     private payServiceService: PayServiceService
     // private productService:ProductService,
     // private categoryService: CategoryService
   ) {
-    iconSet.icons = { cilCart, cilSearch,cilUser,cilPhone,cilEnvelopeClosed};
+
   }
 
 

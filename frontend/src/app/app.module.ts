@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { IconModule, IconSetService, IconSetModule } from '@coreui/icons-angular';
 import { GridModule, CarouselModule,CardModule,TooltipModule, FooterModule,ImgModule,NavModule,PaginationModule, HeaderModule, FormModule, ButtonModule} from '@coreui/angular';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LoginComponent } from './page/login/login.component';
@@ -62,7 +62,9 @@ import { NavComponent } from './page/nav/nav.component';
     PaginationModule,
     FormsModule,
     TooltipModule,
-    UtilitiesModule
+    UtilitiesModule,
+    IconSetModule.forRoot()
+
   ],
   providers: [ IconSetService, {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true}],
 

@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
   <c-container>
     <c-row class="justify-content-center">
@@ -7,13 +8,12 @@
             <c-card-body>
               <form cForm  #loginForm="ngForm"
               (ngSubmit)="onLogin(loginForm)">
-                <h1>Login</h1>
-                <p class="text-medium-emphasis">Sign In to your account</p>
+                <h1>Belépés</h1>
                 <c-input-group class="mb-3">
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input autoComplete="username" cFormControl placeholder="Name" name="email"  [(ngModel)]="user.email"
+                  <input autoComplete="username" cFormControl placeholder="Név" name="email"  [(ngModel)]="user.email"
                   #emailField="ngModel"/>
                 </c-input-group>
                 <c-input-group class="mb-4">
@@ -23,7 +23,7 @@
                   <input
                     autoComplete="current-password"
                     cFormControl
-                    placeholder="Password"
+                    placeholder="Jelszó"
                     type="password"
                     name="password"
                     [(ngModel)]="user.password"
@@ -32,7 +32,7 @@
                 <c-row>
                   <c-col xs="6">
                     <button type="submit" cButton class="px-4" color="primary" [disabled]="loginForm.invalid">
-                      Login
+                      Belépés
                     </button>
                   </c-col>
                   <c-col class="text-right" xs="6">
@@ -63,4 +63,5 @@
     </c-row>
   </c-container>
 </div>
+<app-footer></app-footer>
 

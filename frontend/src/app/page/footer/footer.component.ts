@@ -1,4 +1,6 @@
+import { IconSetService } from '@coreui/icons-angular';
 import { Component, OnInit } from '@angular/core';
+import { cibFacebook, cilEnvelopeClosed, cilPhone } from '@coreui/icons';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public iconSet: IconSetService
+  ) {
+    iconSet.icons = { cilEnvelopeClosed, cilPhone, cibFacebook};
+  }
 
   ngOnInit(): void {
   }

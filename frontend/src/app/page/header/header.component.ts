@@ -1,45 +1,47 @@
 import { AuthService } from 'src/app/service/auth.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { SearchPipe } from 'src/app/pipe/search.pipe';
-import { cilAccountLogout} from '@coreui/icons';
-import { IconSetService } from '@coreui/icons-angular';
+import { cilAccountLogout, cilCart, cilUser} from '@coreui/icons';
+import {IconModule, IconSetModule,IconSetService } from '@coreui/icons-angular';
 import { User } from 'src/app/model/user';
+import { Subscription } from 'rxjs';
 
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  providers: [IconSetService]
 })
 export class HeaderComponent implements OnInit {
 
   searchText = '';
-  user: User | null = null
+  user: User | null = null;
+  loginStatus = false;
+  userSub!:Subscription;
+
   @Output() searchTextEmitter = new EventEmitter<string>();
 
   search($event: string | undefined){
     this.searchTextEmitter.emit($event);
   }
 
-  characters = [
-    // 'Ant-Man',
-    // 'Aquaman',
-    // 'Asterix',
-    // 'The Atom',
-    // 'The Avengers',
-    // 'Batgirl',
-    // 'Batman',
-    // 'Batwoman',
-  ]
+
 
   constructor(
     public iconSet: IconSetService,
     private auth:AuthService
   ) {
-    iconSet.icons = { cilAccountLogout};
+    iconSet.icons = {cilAccountLogout,cilUser, cilCart};
   }
 
   ngOnInit(): void {
+    this.userSub = this.auth.currentUserSubject.subscribe(
+      user => this.user = user
+    )
+  }
+
+  ngOnDestroy(){
+    this.userSub.unsubscribe();
   }
 
   onLogout() {
