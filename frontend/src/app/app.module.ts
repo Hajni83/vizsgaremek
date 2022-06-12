@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { GridModule, CarouselModule,CardModule,TooltipModule, FooterModule,ImgModule,NavModule,PaginationModule, HeaderModule, FormModule, ButtonModule} from '@coreui/angular';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LoginComponent } from './page/login/login.component';
 import { HomeComponent } from './page/home/home.component';
 import { FamilyComponent } from './page/family/family.component';
@@ -21,7 +21,9 @@ import { CartComponent } from './page/cart/cart.component';
 import { SearchPipe } from './pipe/search.pipe';
 import { CardDetailComponent } from './page/card-detail/card-detail.component';
 import { CardComponent } from './page/card/card.component';
-
+import { ForbiddenComponent } from './page/forbidden/forbidden.component';
+import { JwtInterceptorService } from './service/jwt-interceptor.service';
+import { NavComponent } from './page/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CardComponent } from './page/card/card.component';
     CartComponent,
     SearchPipe,
     CardDetailComponent,
-    CardComponent
+    CardComponent,
+    ForbiddenComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,8 @@ import { CardComponent } from './page/card/card.component';
     TooltipModule,
     UtilitiesModule
   ],
-  providers: [ IconSetService],
+  providers: [ IconSetService, {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true}],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

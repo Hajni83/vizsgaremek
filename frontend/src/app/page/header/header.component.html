@@ -78,6 +78,15 @@
               title="Numbered List Icon"
             ></svg
           ></a>
+          <a *ngIf="user" (click)="onLogout()"
+            ><svg
+              class="mx-2 text-dark"
+              cIcon
+              name="cilAccountLogout"
+              size="xl"
+              title="Numbered List Icon"
+            ></svg
+          ></a>
         </div>
       </nav>
     </c-col>

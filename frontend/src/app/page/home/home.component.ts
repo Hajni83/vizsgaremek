@@ -1,5 +1,3 @@
-import { Toast } from 'bootstrap';
-
 import { ChangeDetectorRef, Component,ElementRef,OnInit, ViewChild } from '@angular/core';
 import { IconSetService } from '@coreui/icons-angular';
 import { cilCart,cilSearch,cilUser,cilPhone,cilEnvelopeClosed } from '@coreui/icons';
@@ -17,7 +15,7 @@ export class HomeComponent implements OnInit {
   title = 'vizsgaremek';
   slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
   products!: Product[];
-  
+
   cards:Product[] = [{
     id:0,
     image:"./assets/images/cafe1.jpg",
