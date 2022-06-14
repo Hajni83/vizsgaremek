@@ -62,8 +62,7 @@ import { NavComponent } from './page/nav/nav.component';
     PaginationModule,
     FormsModule,
     TooltipModule,
-    UtilitiesModule,
-    IconSetModule.forRoot()
+    UtilitiesModule
 
   ],
   providers: [ IconSetService, {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true}],

@@ -1,42 +1,44 @@
+import { ConfigService } from './config.service';
 
-// import { Product } from './../model/product';
-// import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
-// import { environment } from '../../environments/environment';
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Product } from './../model/product';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ProductService {
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductService {
 
-//   apiURL: string = `${environment.baseURL}products`;
-//   httpOptions: HttpHeaders = new HttpHeaders({
-//     'content-type': 'application/json'
-//   });
+  apiURL: string = `${this.config.productsUrl}products`;
+  httpOptions: HttpHeaders = new HttpHeaders({
+    'content-type': 'application/json'
+  });
 
-//   constructor(
-//     private http: HttpClient
-//   ) { }
+  constructor(
+    private http: HttpClient,
+    private config:ConfigService
+  ) { }
 
-//   getAll(): Observable<Product[]> {
-//     return this.http.get<Product[]>(`${this.apiURL}?_expand=category`);
-//   }
+  getAll(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiURL}`);
+  }
 
-//   getProductsByCategory(catId: number): Observable<Product[]> {
-//     return this.http.get<Product[]>(`${this.apiURL}?_expand=category&categoryId_like=${catId}`);
-//   }
+  getProductsByCategory(catId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiURL}`);
+  }
 
-//   update(product:Product): Observable<Product>{
-//     return this.http.patch<Product>(`${this.apiURL}/${product.id}`, product);
-//   }
+  update(product:Product): Observable<Product>{
+    return this.http.patch<Product>(`${this.apiURL}/${product.id}`, product);
+  }
 
-//   create(product: Product): Observable<Product> {
-//     return this.http.post<Product>(this.apiURL, product);
-//   }
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.apiURL, product);
+  }
 
-//   remove(product:Product): Observable<Product>{
-//     return this.http.delete<any>(`${this.apiURL}/${product.id}`);
-//   }
+  remove(product:Product): Observable<Product>{
+    return this.http.delete<any>(`${this.apiURL}/${product.id}`);
+  }
 
-// }
+}

@@ -13,8 +13,8 @@ import { UserService } from './user.service';
 })
 export class AuthService {
 
-  loginUrl = `${this.config.apiUrl}login`;
-  logoutUrl = `${this.config.apiUrl}logout`;
+  loginUrl = `${this.config.usersUrl}login`;
+  logoutUrl = `${this.config.usersUrl}logout`;
   storageName = 'currentUser';
   currentUserSubject: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
   lastToken: string = '';
@@ -25,7 +25,7 @@ export class AuthService {
     private config: ConfigService,
     private http: HttpClient,
     private router: Router,
-    private userService: UserService,
+    private userService: UserService
   ) { }
 
   get currentUserValue(): User | null {

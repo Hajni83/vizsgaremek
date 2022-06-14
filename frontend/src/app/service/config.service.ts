@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
 
-  apiUrl = 'http://localhost:3000/';
+  usersUrl = 'http://localhost:3000/';
+  productsUrl = 'http://localhost:3001/'
 
   navigation: {label: string, href: string, role: number}[] = [
     {label: 'Home', href: '', role: 1},

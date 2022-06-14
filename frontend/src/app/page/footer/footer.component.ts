@@ -10,9 +10,7 @@ import { cibFacebook, cilEnvelopeClosed, cilPhone } from '@coreui/icons';
 export class FooterComponent implements OnInit {
 
   constructor(
-    public iconSet: IconSetService
   ) {
-    iconSet.icons = { cilEnvelopeClosed, cilPhone, cibFacebook};
   }
 
   ngOnInit(): void {

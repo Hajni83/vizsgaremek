@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Product } from '../../model/product';
 import { Category } from '../../model/category';
 import { PayServiceService } from '../pay-service.service';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-home',
@@ -13,27 +14,12 @@ import { PayServiceService } from '../pay-service.service';
 export class HomeComponent implements OnInit {
   title = 'vizsgaremek';
   slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
-  products!: Product[];
+  products: Observable<Product[]> = this.productService.getAll();
 
-  cards:Product[] = [{
-    id:0,
-    image:"./assets/images/cafe1.jpg",
-    name: "Café",
-    description: "Café társasjáték nagycsaládosoknak.",
-    price:1
-   },
-  {
-    id:1,
-    image:"./assets/images/co2.jpg",
-    name: "CO2",
-    description: "CO2 társasjáték környezettudatos családoknak.",
-    price:2
-  }];
-
-  // categories: Observable<Category[]>  = this.categoryService.getAll();
+ 
   constructor(
-    private payServiceService: PayServiceService
-    // private productService:ProductService,
+    private payServiceService: PayServiceService,
+    private productService:ProductService
     // private categoryService: CategoryService
   ) {
 

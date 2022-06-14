@@ -1,7 +1,16 @@
 <c-container class="row">
 <c-card class="d-flex align-self-stretch" style="cursor:pointer" routerLink="/card-detail" [cBorder]="'danger'" [textColor]="'danger'">
   <img cCardImg="top" [src]="card.image">
-  <c-card-body>
+  <p *ngIf="editor" class="pt-3">
+    <svg
+      class="mx-5"
+      cIcon
+      name="cilPencil"
+      size="xl"
+      title="Numbered List Icon"
+    ></svg>
+  </p>
+  <c-card-body style="height: 150px">
     <h5 cCardTitle>{{ card.name }}</h5>
     <p cCardText>
       {{ card.description }}

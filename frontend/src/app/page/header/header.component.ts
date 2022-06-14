@@ -9,8 +9,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  providers: [IconSetService]
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
@@ -28,10 +27,8 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(
-    public iconSet: IconSetService,
     private auth:AuthService
   ) {
-    iconSet.icons = {cilAccountLogout,cilUser, cilCart};
   }
 
   ngOnInit(): void {

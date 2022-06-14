@@ -18,7 +18,7 @@ export class UserService {
   ) { }
 
   get(id?: string | number): Observable<User[]>{
-    let url = `${this.config.apiUrl}${this.entity}`;
+    let url = `${this.config.usersUrl}${this.entity}`;
     if(id){
       url+=`/${id}`
     }
@@ -27,12 +27,12 @@ export class UserService {
   }
 
   query(queryString:string):Observable<User[]>{
-    const url = `${this.config.apiUrl}${this.entity}?${queryString}`;
+    const url = `${this.config.usersUrl}${this.entity}?${queryString}`;
     return this.http.get<User[]>(url);
   }
 
   update(user:User):Observable<User>{
-    const url = `${this.config.apiUrl}${this.entity}/${user.id}`;
+    const url = `${this.config.usersUrl}${this.entity}/${user.id}`;
     return this.http.put<User>(url,user);
   }
 }

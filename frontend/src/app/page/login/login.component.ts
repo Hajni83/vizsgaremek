@@ -9,8 +9,7 @@ import { cilLockLocked, cilUser } from '@coreui/icons';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   user: User = new User();
@@ -18,10 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router: Router,
-    public iconSet: IconSetService
+    private router: Router
     ) {
-      iconSet.icons = {cilUser, cilLockLocked};
     }
 
   ngOnInit(): void {}
