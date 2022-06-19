@@ -1,0 +1,24 @@
+[{
+    "id":1,
+    "name": "explorers társasjáték",
+    "description": "előrendelés! Várható beérkezés: június 7.\nnyelvfüggetlen játék, angol kiadás\nnyomtatott magyar szabályt adunk a játék mellé!\n45-90 perc játékidő\nközepesen nehéz játék (3/5)",
+    "datasheet": "href=\"https://boardgamegeek.com/boardgame/330174/explorers",
+    "image": "../frontend/src/assets/images/explorers1.jpg",
+    "price": 5320
+  },
+  {
+    "id":2,
+    "name": "explorers társasjáték",
+    "description": "előrendelés! Várható beérkezés: június 7.\nnyelvfüggetlen játék, angol kiadás\nnyomtatott magyar szabályt adunk a játék mellé!\n45-90 perc játékidő\nközepesen nehéz játék (3/5)",
+    "datasheet": "href=\"https://boardgamegeek.com/boardgame/330174/explorers",
+    "image": "../frontend/src/assets/images/explorers1.jpg",
+    "price": 5320
+  },
+  {
+    "id":3,
+    "name": "explorers társasjáték",
+    "description": "előrendelés! Várható beérkezés: június 7.\nnyelvfüggetlen játék, angol kiadás\nnyomtatott magyar szabályt adunk a játék mellé!\n45-90 perc játékidő\nközepesen nehéz játék (3/5)",
+    "datasheet": "href=\"https://boardgamegeek.com/boardgame/330174/explorers",
+    "image": "../frontend/src/assets/images/explorers1.jpg",
+    "price": 5320
+  }]
