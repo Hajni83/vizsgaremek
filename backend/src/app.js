@@ -1,7 +1,8 @@
 const express = require('express');
 const httpErrors = require('http-errors');
-
+const cors = require('cors');
 const config = require('config');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -27,11 +28,11 @@ app.use((req,res,next) => {
 
     next();
 });
-
+app.use(cors());
 app.use(express.static('public'));
+app.use(bodyParser.json());
 
-app.use((req,res,next) => {
-    res.send(`<h1>Hello from Express!</h1>`);
-});
+app.use('/products', require('./controller/product/product.router'));
+
 
 module.exports = app;
