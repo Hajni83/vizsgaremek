@@ -1,3 +1,5 @@
+json-server-auth ./server/users.json --w --port 3001
+
 # Vizsgaremek
 # USER STORY
 **Társasjáték webshop - Board game webshop**

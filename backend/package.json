@@ -10,10 +10,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "deploy": "cd ../frontend && ng build && cd ../backend && docker-compose up"
   },
   "keywords": [],
-  "author": "",
+  "author": "Maró Hajnalka",
   "license": "ISC",
-  "description": ""
+  "description": "Backend alkalmazás"
 }
