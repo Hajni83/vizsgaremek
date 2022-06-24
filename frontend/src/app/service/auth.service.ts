@@ -13,8 +13,8 @@ import { UserService } from './user.service';
 })
 export class AuthService {
 
-  loginUrl = `${this.config.usersUrl}login`;
-  logoutUrl = `${this.config.usersUrl}logout`;
+  loginUrl = `${this.config.apiUrl}login`;
+  logoutUrl = `${this.config.apiUrl}logout`;
   storageName = 'currentUser';
   currentUserSubject: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
   lastToken: string = '';

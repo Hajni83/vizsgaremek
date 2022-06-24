@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-
 const {host, user, pass} = config.get('database');
 mongoose.connect(`mongodb+srv://${host}`, {
     user,
@@ -32,10 +31,14 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-app.use('/products', require('./controller/product/product.router'));
-app.use('/users', require('./controller/user/user.router'));
+const authencticateJwt = require('./model/auth/authenticate');
+
+app.use('/products', authencticateJwt, require('./controller/product/product.router'));
+app.use('/login', require('./controller/login/login.router'));
 app.use('/orders', require('./controller/order/order.router'));
 app.use('/addresses', require('./controller/address/address.router'));
+app.use('/users', require('./controller/user/user.router'));
+
 
 
 module.exports = app;

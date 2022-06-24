@@ -1,8 +1,8 @@
 [{
-    "first_name":"Jane",
+    "first_name":"Test",
     "last_name":"Doe",
+    "email":"test@test.hu",
     "password":"test",
     "role":3,
     "token":4567
-
 }]

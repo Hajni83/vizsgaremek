@@ -11,7 +11,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ProductService {
 
-  apiURL: string = `${this.config.productsUrl}products`;
+  apiURL: string = `${this.config.apiUrl}products`;
   httpOptions: HttpHeaders = new HttpHeaders({
     'content-type': 'application/json'
   });

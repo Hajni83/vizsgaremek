@@ -1,7 +1,11 @@
 const fsp = require('fs/promises');
 const {join} = require('path');
-const ProductModel = require('../model/product.model');
+const productModel = require('../model/product.model');
 const userModel = require('../model/user.model');
+const orderModel = require('../model/order.model');
+const addressModel = require('../model/address.model');
+const categoryModel = require('../model/category.model');
+
 
 (async () => {
     const productJson = await fsp.readFile(
@@ -9,7 +13,7 @@ const userModel = require('../model/user.model');
         'utf-8',
     );
     const products = JSON.parse(productJson);
-    await ProductModel.insertMany(products);
+    await productModel.insertMany(products);
 })();
 
 (async () => {
@@ -37,4 +41,13 @@ const userModel = require('../model/user.model');
     );
     const address = JSON.parse(addressJson);
     await addressModel.insertMany(address);
+})();
+
+(async () => {
+    const categoryJson = await fsp.readFile(
+        join(__dirname, './category.json'),
+        'utf-8',
+    );
+    const category = JSON.parse(categoryJson);
+    await categoryModel.insertMany(category);
 })();
