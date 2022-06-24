@@ -33,6 +33,9 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.use('/products', require('./controller/product/product.router'));
+app.use('/users', require('./controller/user/user.router'));
+app.use('/orders', require('./controller/order/order.router'));
+app.use('/addresses', require('./controller/address/address.router'));
 
 
 module.exports = app;

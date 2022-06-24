@@ -1,9 +1,11 @@
-export class Product {
+import { Category } from './category';
+import { Entity } from './entity';
+export class Product extends Entity{
   [key: string]: any;
-  id: number = 0;
   name: string = '';
   description: string = '';
   datasheet:string='';
   image: string = '';
   price: number = 0;
+  category?: Category = new Category();
 }
