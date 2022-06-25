@@ -49,6 +49,7 @@ export class BoardgamesComponent implements OnInit {
         .getProductsByCategory(params['category'])
         .subscribe((prods) => {
           this.products = prods;
+          this.jumpToPage(1);
         });
     });
   }

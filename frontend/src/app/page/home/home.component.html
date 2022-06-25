@@ -1,5 +1,3 @@
-
-
 <app-header></app-header>
 <c-container>
 
@@ -20,11 +18,17 @@
 
   <h1 class="text-center py-5">Legújabb termékek</h1>
 
-  <c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
-    <c-col *ngFor="let card of products |async; index as i">
-      <app-card [card]="card" [i]="i"></app-card>
-    </c-col>
-  </c-row>
+  <c-pagination aria-label="Page navigation example">
+    <button cPageLink aria-label="Previous" class="mr-3" [routerLink] (click)="jumpToPage(page-1)" [disabled]="page===1"><span aria-hidden="true">&laquo;</span></button>
+
+    <c-row [gutter]="4" [md]="3" [xs]="1">
+      <c-col *ngFor="let card of products | slice:startSlice:endSlice; index as i">
+        <app-card [card]="card" [i]="i"></app-card>
+      </c-col>
+    </c-row>
+
+    <button cPageLink aria-label="Next" class="ml-3" [routerLink] (click)="jumpToPage(page+1)" [disabled]="page===pageCard.length"><span aria-hidden="true">&raquo;</span></button>
+  </c-pagination>
 
 </c-container>
 <app-footer></app-footer>

@@ -14,19 +14,23 @@ import { ProductService } from 'src/app/service/product.service';
 export class HomeComponent implements OnInit {
   title = 'vizsgaremek';
   slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
-  products: Observable<Product[]> = this.productService.getAll();
+  products: Product[] = [];
+  pageSize: number = 3;
+  startSlice: number = 0;
+  endSlice: number = 3;
+  page: number = 1;
 
- 
   constructor(
     private payServiceService: PayServiceService,
     private productService:ProductService
-    // private categoryService: CategoryService
-  ) {
-
-  }
-
+  ) {}
 
   ngOnInit(): void {
+    this.productService.getAll().subscribe((result)=>{
+      this.products = result;
+    })
+
+
     this.slides[0] = {
       src: '../assets/images/explorers1.jpg',
     };
@@ -37,14 +41,19 @@ export class HomeComponent implements OnInit {
       src: '../assets/images/cafe1.jpg',
     }
 
-     //FYI: itt iratkozok fel, nem async-el a view-ben mert több helyen is használjuk a products tömböt.
-    //  this.productService.getAll().subscribe(products => {
-    //   this.products = products;
-    // });
-
     this.payServiceService.paySubjectObservable.subscribe(() => {
       alert("Sikeres fizetés!")
     })
+  }
 
+  get pageCard(): number[] {
+    const pageSize = Math.ceil(this.products.length / this.pageSize);
+    return new Array(pageSize).fill(1).map((item, index) => index + 1);
+  }
+
+  jumpToPage(pageNum: number): void {
+    this.page = pageNum;
+    this.startSlice = this.pageSize * (pageNum - 1);
+    this.endSlice = this.startSlice + this.pageSize;
   }
 }
