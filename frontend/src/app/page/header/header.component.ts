@@ -14,7 +14,6 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   searchText = '';
-  loginStatus = false;
   user$ = this.auth.user$;
 
   @Output() searchTextEmitter = new EventEmitter<string>();

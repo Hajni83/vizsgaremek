@@ -49,7 +49,6 @@ export class AuthService {
         if (user) {
           this.router.navigate(['/']);
         } else {
-          this.router.navigate(['/', 'login']);
           this.access_token$.next('');
           sessionStorage.removeItem('login');
         }
@@ -65,7 +64,7 @@ export class AuthService {
         this.access_token$.next(response.accessToken);
         sessionStorage.setItem('login', JSON.stringify(response));
       },
-      error: (err) => console.error(err),
+      error: (err) => alert("Hibás bejelentkezés!"),
     });
   }
 

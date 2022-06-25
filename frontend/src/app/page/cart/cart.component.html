@@ -8,27 +8,23 @@
           <th>Kép</th>
           <th>Név</th>
           <th>Egységár</th>
-          <th>Mennyiség</th>
-          <th>Összeg</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let row of cartContent">
-          <td></td>
+          <td><img [src]=row.image></td>
           <td>{{ row.name }}</td>
-          <td>{{ row.price }}</td>
-          <td>{{ row.quantity }}</td>
-          <td>{{ row.sum }}</td>
+          <td>{{ row.price }} Ft</td>
         </tr>
       </tbody>
     </table>
     <h2>Összesen</h2>
-    <p>5632Ft</p>
+    <p>{{total}} Ft</p>
     <button
       cButton
       class="mr-3 mb-3"
       color="dark"
-      (click)="onClick()"
+      (click)="onClickPay()"
     >Fizetek
     </button>
 

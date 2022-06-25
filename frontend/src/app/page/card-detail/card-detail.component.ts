@@ -1,11 +1,12 @@
 import { Product } from './../../model/product';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from './../../service/product.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
 import { Location } from '@angular/common';
 import { Observable, switchMap } from 'rxjs';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-card-detail',
@@ -25,6 +26,8 @@ export class CardDetailComponent implements OnInit {
     private productService:ProductService,
     private activatedRoute:ActivatedRoute,
     private location: Location,
+    private router:Router,
+    private cartService:CartService
   ) { }
 
   ngOnInit(): void {
@@ -45,5 +48,10 @@ export class CardDetailComponent implements OnInit {
       next: updatedProduct => this.location.back(),
       error: err => console.error(err),
     });
+  }
+
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product._id);
+    this.router.navigate(['/cart']);
   }
 }

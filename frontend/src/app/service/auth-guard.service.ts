@@ -14,7 +14,7 @@ export class AuthGuardService implements CanActivate{
   ) { }
 
   canActivate():boolean{
-    if(!this.auth.currentUserValue){
+    if(!this.auth.user$.value){
       this.router.navigate(['login'])
       return false
     }

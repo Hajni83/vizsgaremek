@@ -94,4 +94,4 @@ Megjelenik a felhasználó előtt táblazatos formában a kiválasztott játék 
 A felhasználónak lehetősége nyílik a szállítási cím megadására.
 Ezek alatt két gomb látható: 
 1. A vásárlás folytatása. Ekkor visszaugrik a főoldalra. 
-2. Fizetek. Felugrik egy pop-up, hogy köszönjük, hogy nálunk vásárolt, a megrendelést adatbázisba mentjük és visszairányítjuk a főoldalra.
+2. Fizetek. Felugrik egy pop-up, hogy köszönjük, hogy nálunk vásárolt, a megrendelést adatbázisba mentjük, ahogy a szállítási címet is és visszairányítjuk a főoldalra a felhasználót.

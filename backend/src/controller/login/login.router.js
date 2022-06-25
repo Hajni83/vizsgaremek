@@ -55,14 +55,3 @@ router.post('/', async (req, res, next) => {
 });
 
 module.exports = router;
-
-/*
-fetch('http://localhost:3000/login', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: '{"email": "test@test.hu", "password": "test789"}',
-}).then(r => r.json())
-    .then( d => console.log(d) );
-*/
