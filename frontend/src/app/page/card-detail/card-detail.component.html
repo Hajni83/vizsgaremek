@@ -1,41 +1,54 @@
 
 <app-header></app-header>
-<c-container>
+<c-container *ngIf="product$ | async as product">
   <c-row>
-    <h1>{{product?.name}}</h1>
-    <div class="d-flex flex-wrap">
-      <div>
-        <img src="../../../assets/images/explorers1.jpg" alt="" class="py-3">
-      </div>
-      <div *ngIf="editor">
-        <p><input type="currency" [value]="product?.price"></p>
-          <ul>
-            <li>
-              <input [value]="product?.description">
-            </li>
-            <li>
-              <a href="https://boardgamegeek.com/boardgame/330174/explorers">BoardGameGeek adatlap</a>
-            </li>
-          </ul>
-          <p>
-            <button cButton color="dark" routerLink="/cart">Kosárba</button>
-          </p>
-      </div>
-      <div *ngIf="!editor">
-        <p>{{product?.price}} Ft</p>
-          <ul>
-            <li>
-              {{product?.description}}
-            </li>
-            <li>
-              <a href={{product?.datasheet}}>BoardGameGeek adatlap</a>
-            </li>
-          </ul>
-          <p>
-            <button cButton color="dark" routerLink="/cart">Kosárba</button>
-          </p>
+
+    <c-col lg="10" xs="2">
+    <div *ngIf="editor">
+      <form (ngSubmit)="update(product)">
+        <input cFormControl name="name" [(ngModel)]="product.name">
+        <div>
+          <img src={{product.image}} alt="" class="py-3">
+        </div>
+
+        <input class="form-control" type="number" name="price" [(ngModel)]="product.price">
+        <ul>
+          <li>
+            <textarea class="form-control" name="description" [(ngModel)]="product.description"></textarea>
+          </li>
+          <li>
+            <a href="https://boardgamegeek.com/boardgame/330174/explorers">BoardGameGeek adatlap</a>
+          </li>
+        </ul>
+        <p>
+          <button cButton color="dark" routerLink="/cart">Mentés</button>
+        </p>
+      </form>
+    </div>
+
+    <div *ngIf="!editor">
+      <h1>{{product.name}}</h1>
+
+      <div class="d-flex flex-wrap">
+        <div>
+          <img src={{product.image}} alt="" class="py-3">
+        </div>
+
+        <p>{{product.price}} Ft</p>
+        <ul>
+          <li>
+            {{product.description}}
+          </li>
+          <li>
+            <a href={{product.datasheet}}>BoardGameGeek adatlap</a>
+          </li>
+        </ul>
+        <p>
+          <button cButton color="dark" routerLink="/cart">Kosárba</button>
+        </p>
       </div>
     </div>
+  </c-col>
   </c-row>
 </c-container>
 <app-footer></app-footer>

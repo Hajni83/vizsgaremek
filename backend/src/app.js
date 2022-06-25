@@ -13,7 +13,7 @@ mongoose.connect(`mongodb+srv://${host}`, {
     pass
 }).then(
     conn => {
-        //require('./seed/seeder');
+        // require('./seed/seeder');
         console.log('Database is seeded!');
     }
 ).catch(
