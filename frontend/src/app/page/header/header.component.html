@@ -78,7 +78,7 @@
               title="Numbered List Icon"
             ></svg
           ></a>
-          <a *ngIf="user" (click)="onLogout()" style="cursor:pointer"
+          <a *ngIf="(user$ | async)" (click)="onLogout()" style="cursor:pointer"
             ><svg
               class="mx-2 text-dark"
               cIcon

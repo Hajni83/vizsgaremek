@@ -1,3 +1,6 @@
+import { Product } from './../../model/product';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from './../../service/product.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
@@ -9,15 +12,22 @@ import { User } from 'src/app/model/user';
 })
 export class CardDetailComponent implements OnInit {
 
-editor:User | null = this.auth.currentUserValue;
-// todo az urlben át kell adni a product idját és azt a router paramon keresztül ki kell olvasni, majd azzal meg kell hívni a productservice get(id) metódusát, ez lesz maga a product property
-//product=
+  editor:User | null = this.auth.user$.value;
+  product?: Product;
 
   constructor(
     private auth:AuthService,
+    private productService:ProductService,
+    private activatedRoute:ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      this.productService.getById(params['id']).subscribe((product)=>{
+        this.product = product;
+      });
+    });
+
   }
 
 }

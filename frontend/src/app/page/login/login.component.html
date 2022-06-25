@@ -7,13 +7,13 @@
           <c-card class="p-4">
             <c-card-body>
               <form cForm  #loginForm="ngForm"
-              (ngSubmit)="onLogin(loginForm)">
+              (ngSubmit)="onLogin()">
                 <h1>Belépés</h1>
                 <c-input-group class="mb-3">
                   <span cInputGroupText>
                     <svg cIcon name="cilUser"></svg>
                   </span>
-                  <input autoComplete="username" cFormControl placeholder="Név" name="email"  [(ngModel)]="user.email"
+                  <input autoComplete="username" cFormControl placeholder="Név" name="email"  [(ngModel)]="loginData.email"
                   #emailField="ngModel"/>
                 </c-input-group>
                 <c-input-group class="mb-4">
@@ -26,7 +26,7 @@
                     placeholder="Jelszó"
                     type="password"
                     name="password"
-                    [(ngModel)]="user.password"
+                    [(ngModel)]="loginData.password"
                   />
                 </c-input-group>
                 <c-row>

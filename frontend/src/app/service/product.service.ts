@@ -25,12 +25,16 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.apiURL}`);
   }
 
+  getById(productId:number): Observable<Product>{
+    return this.http.get<Product>(`${this.apiURL}/${productId}`);
+  }
+
   getProductsByCategory(cat: string): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.apiURL}/search/${cat}`);
   }
 
   update(product:Product): Observable<Product>{
-    return this.http.patch<Product>(`${this.apiURL}/${product.id}`, product);
+    return this.http.patch<Product>(`${this.apiURL}/${product._id}`, product);
   }
 
   create(product: Product): Observable<Product> {
@@ -38,7 +42,7 @@ export class ProductService {
   }
 
   remove(product:Product): Observable<Product>{
-    return this.http.delete<any>(`${this.apiURL}/${product.id}`);
+    return this.http.delete<any>(`${this.apiURL}/${product._id}`);
   }
 
 }

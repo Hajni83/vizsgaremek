@@ -35,8 +35,9 @@ import { SearchPipe } from './pipe/search.pipe';
 import { CardDetailComponent } from './page/card-detail/card-detail.component';
 import { CardComponent } from './page/card/card.component';
 import { ForbiddenComponent } from './page/forbidden/forbidden.component';
-import { JwtInterceptorService } from './service/jwt-interceptor.service';
+import { JwtInterceptor } from './service/jwt.interceptor';
 import { NavComponent } from './page/nav/nav.component';
+import { AuthService } from './service/auth.service';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,10 @@ import { NavComponent } from './page/nav/nav.component';
     IconSetService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: JwtInterceptorService,
+      useClass: JwtInterceptor,
+      deps: [
+        AuthService,
+      ],
       multi: true,
     },
   ],

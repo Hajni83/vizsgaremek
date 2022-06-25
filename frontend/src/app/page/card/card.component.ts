@@ -12,7 +12,7 @@ import { User } from 'src/app/model/user';
 })
 export class CardComponent implements OnInit {
 
- editor:User | null = this.auth.currentUserValue;
+  editor:User | null = this.auth.user$.value;
 
   @Input()
   card!: Product;

@@ -2,7 +2,7 @@
     "id":1,
     "name": "family társasjáték",
     "description": "előrendelés! Várható beérkezés: június 7.\nnyelvfüggetlen játék, angol kiadás\nnyomtatott magyar szabályt adunk a játék mellé!\n45-90 perc játékidő\nközepesen nehéz játék (3/5)",
-    "datasheet": "href=\"https://boardgamegeek.com/boardgame/330174/explorers",
+    "datasheet": "https://boardgamegeek.com/boardgame/330174/explorers",
     "image": "./assets/images/explorers1.jpg",
     "price": 5320
   },
@@ -10,7 +10,7 @@
     "id":2,
     "name": "strategy társasjáték",
     "description": "előrendelés! Várható beérkezés: június 7.\nnyelvfüggetlen játék, angol kiadás\nnyomtatott magyar szabályt adunk a játék mellé!\n45-90 perc játékidő\nközepesen nehéz játék (3/5)",
-    "datasheet": "href=\"https://boardgamegeek.com/boardgame/330174/explorers",
+    "datasheet": "https://boardgamegeek.com/boardgame/330174/explorers",
     "image": "./assets/images/explorers1.jpg",
     "price": 5320
   },
@@ -18,7 +18,7 @@
     "id":3,
     "name": "még egy strategy társasjáték",
     "description": "előrendelés! Várható beérkezés: június 7.\nnyelvfüggetlen játék, angol kiadás\nnyomtatott magyar szabályt adunk a játék mellé!\n45-90 perc játékidő\nközepesen nehéz játék (3/5)",
-    "datasheet": "href=\"https://boardgamegeek.com/boardgame/330174/explorers",
+    "datasheet": "https://boardgamegeek.com/boardgame/330174/explorers",
     "image": "./assets/images/explorers1.jpg",
     "price": 5320
   }]

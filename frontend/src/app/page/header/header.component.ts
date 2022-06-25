@@ -14,9 +14,8 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   searchText = '';
-  user: User | null = null;
   loginStatus = false;
-  userSub!:Subscription;
+  user$ = this.auth.user$;
 
   @Output() searchTextEmitter = new EventEmitter<string>();
 
@@ -24,25 +23,14 @@ export class HeaderComponent implements OnInit {
     this.searchTextEmitter.emit($event);
   }
 
-
-
   constructor(
     private auth:AuthService
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.userSub = this.auth.currentUserSubject.subscribe(
-      user => this.user = user
-    )
-  }
-
-  ngOnDestroy(){
-    this.userSub.unsubscribe();
   }
 
   onLogout() {
-    this.auth.logout()
+    this.auth.logout();
   }
-
 }

@@ -2,30 +2,16 @@
 <app-header></app-header>
 <c-container>
   <c-row>
-    <h1>EXPLORERS TÁRSASJÁTÉK</h1>
+    <h1>{{product?.name}}</h1>
     <div class="d-flex flex-wrap">
       <div>
         <img src="../../../assets/images/explorers1.jpg" alt="" class="py-3">
       </div>
       <div *ngIf="editor">
-        <p><input type="currency"></p>
-
-
+        <p><input type="currency" [value]="product?.price"></p>
           <ul>
             <li>
-              
-            </li>
-            <li>
-              nyelvfüggetlen játék, angol kiadás
-            </li>
-            <li>
-              nyomtatott magyar szabályt adunk a játék mellé!
-            </li>
-            <li>
-              45-90 perc játékidő
-            </li>
-            <li>
-              közepesen nehéz játék (3/5)
+              <input [value]="product?.description">
             </li>
             <li>
               <a href="https://boardgamegeek.com/boardgame/330174/explorers">BoardGameGeek adatlap</a>
@@ -36,27 +22,13 @@
           </p>
       </div>
       <div *ngIf="!editor">
-        <p>6990 Ft</p>
-
-
+        <p>{{product?.price}} Ft</p>
           <ul>
             <li>
-              előrendelés! Várható beérkezés: június 7.
+              {{product?.description}}
             </li>
             <li>
-              nyelvfüggetlen játék, angol kiadás
-            </li>
-            <li>
-              nyomtatott magyar szabályt adunk a játék mellé!
-            </li>
-            <li>
-              45-90 perc játékidő
-            </li>
-            <li>
-              közepesen nehéz játék (3/5)
-            </li>
-            <li>
-              <a href="https://boardgamegeek.com/boardgame/330174/explorers">BoardGameGeek adatlap</a>
+              <a href={{product?.datasheet}}>BoardGameGeek adatlap</a>
             </li>
           </ul>
           <p>
