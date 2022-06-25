@@ -29,22 +29,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link text-danger" routerLink="/family"
+              <a class="nav-link text-danger" routerLink="/boardgames" [queryParams]="{ category: 'family'}"
                 >Családi Játékok</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" routerLink="/strategy"
+              <a class="nav-link text-warning" routerLink="/boardgames" [queryParams]="{ category: 'strategy'}"
                 >Stratégiai Játékok</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-danger" routerLink="/party"
+              <a class="nav-link text-danger" routerLink="/boardgames" [queryParams]="{ category: 'party'}"
                 >Party Játékok</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link text-warning" routerLink="/action"
+              <a class="nav-link text-warning" routerLink="/boardgames" [queryParams]="{ category: 'action'}"
                 >Akciós Játékok</a
               >
             </li>

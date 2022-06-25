@@ -1,5 +1,10 @@
-[{
-    "name":"",
-    "description":""
-}
+[
+    {
+        "name":"family",
+        "description":"Családi társasok"
+    },
+    {
+        "name":"strategy",
+        "description":"Stratégiai társasok"
+    }
 ]

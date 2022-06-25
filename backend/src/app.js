@@ -13,7 +13,7 @@ mongoose.connect(`mongodb+srv://${host}`, {
     pass
 }).then(
     conn => {
-        require('./seed/seeder');
+        //require('./seed/seeder');
         console.log('Database is seeded!');
     }
 ).catch(
@@ -33,11 +33,12 @@ app.use(bodyParser.json());
 
 const authencticateJwt = require('./model/auth/authenticate');
 
-app.use('/products', authencticateJwt, require('./controller/product/product.router'));
+app.use('/products', require('./controller/product/product.router'));
 app.use('/login', require('./controller/login/login.router'));
-app.use('/orders', require('./controller/order/order.router'));
+app.use('/orders', authencticateJwt, require('./controller/order/order.router'));
 app.use('/addresses', require('./controller/address/address.router'));
 app.use('/users', require('./controller/user/user.router'));
+app.use('/categories', require('./controller/category/category.router'));
 
 
 

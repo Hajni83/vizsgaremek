@@ -6,15 +6,28 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IconModule, IconSetService, IconSetModule } from '@coreui/icons-angular';
-import { GridModule, CarouselModule,CardModule,TooltipModule, FooterModule,ImgModule,NavModule,PaginationModule, HeaderModule, FormModule, ButtonModule} from '@coreui/angular';
-import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {
+  IconModule,
+  IconSetService,
+  IconSetModule,
+} from '@coreui/icons-angular';
+import {
+  GridModule,
+  CarouselModule,
+  CardModule,
+  TooltipModule,
+  FooterModule,
+  ImgModule,
+  NavModule,
+  PaginationModule,
+  HeaderModule,
+  FormModule,
+  ButtonModule,
+} from '@coreui/angular';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './page/login/login.component';
 import { HomeComponent } from './page/home/home.component';
-import { FamilyComponent } from './page/family/family.component';
-import { StrategyComponent } from './page/strategy/strategy.component';
-import { PartyComponent } from './page/party/party.component';
-import { ActionComponent } from './page/action/action.component';
+import { BoardgamesComponent } from './page/boardgames/boardgames.component';
 import { HeaderComponent } from './page/header/header.component';
 import { FooterComponent } from './page/footer/footer.component';
 import { CartComponent } from './page/cart/cart.component';
@@ -30,10 +43,7 @@ import { NavComponent } from './page/nav/nav.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    FamilyComponent,
-    StrategyComponent,
-    PartyComponent,
-    ActionComponent,
+    BoardgamesComponent,
     HeaderComponent,
     FooterComponent,
     CartComponent,
@@ -41,7 +51,7 @@ import { NavComponent } from './page/nav/nav.component';
     CardDetailComponent,
     CardComponent,
     ForbiddenComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,11 +72,17 @@ import { NavComponent } from './page/nav/nav.component';
     PaginationModule,
     FormsModule,
     TooltipModule,
-    UtilitiesModule
-
+    UtilitiesModule,
   ],
-  providers: [ IconSetService, {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true}],
+  providers: [
+    IconSetService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptorService,
+      multi: true,
+    },
+  ],
 
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

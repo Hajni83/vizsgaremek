@@ -1,3 +1,5 @@
+const Category = require('../../model/category.model');
+
 module.exports = (model, populateList = []) => {
     return {
         findAll: (params = {}) => {
@@ -29,6 +31,10 @@ module.exports = (model, populateList = []) => {
                 return model.findById(saved._id);
             }
             throw new Error(error);
+        },
+        findByCategory: async (cat) => {
+            let categoryId = await Category.findOne({name:cat}).select("_id");
+            return model.find({category:categoryId}).populate("category")
         }
     };
 };

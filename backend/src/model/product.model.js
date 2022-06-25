@@ -9,7 +9,11 @@ const ProductSchema = mongoose.Schema({
     description: String,
     datasheet:String,
     image:String,
-    price:Number
+    price:Number,
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category',
+    },
 },{
     timestamps:true
 });

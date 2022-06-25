@@ -14,6 +14,10 @@ router.get('/:id', (req, res, next) => {
     return controller.findOne(req, res, next);
 });
 
+router.get('/search/:cat', (req, res, next) => {
+    return controller.findByCategory(req, res, next);
+});
+
 // patch
 router.patch('/:id', (req, res, next) => {
     return controller.updateOne(req, res, next);

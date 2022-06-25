@@ -28,8 +28,8 @@ module.exports = (model, populateList = []) => {
                     res.json(err);
                 });
         },
-        search(req, res, next) {
-            return service.findAll(req.query)
+        findByCategory(req, res, next) {
+            return service.findByCategory(req.params.cat)
                 .then(list => res.json(list));
         }
     };
