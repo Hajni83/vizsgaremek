@@ -13,9 +13,9 @@ import { ActivatedRoute } from '@angular/router';
 export class BoardgamesComponent implements OnInit {
   searchText: string = '';
 
-  pageSize: number = 10;
+  pageSize: number = 9;
   startSlice: number = 0;
-  endSlice: number = 10;
+  endSlice: number = 9;
   page: number = 1;
   products: Product[] = [];
   categoryTitle: string = '';
