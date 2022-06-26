@@ -42,7 +42,6 @@ Swagger
 
 - Regisztráció lehetősége
 - Authguard és Roleguard kész, de nincsenek használva
-- AuthenticateJWT token kész, működik is, de nincs olyan végpontom még amire rárakhatnám.
 - Társasjáték létrehozásának a lehetősége
 - Rendelés módosítása
 - Rendelés során az azonos társasjátékok egy sorba kerülhetnének mennyiségi jelöléssel.

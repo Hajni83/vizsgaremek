@@ -35,16 +35,13 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 const authencticateJwt = require('./model/auth/authenticate');
-// app.use('/users', authencticateJwt, require('./controller/user/user.router'));
 
 app.use('/products', require('./controller/product/product.router'));
 app.use('/login', require('./controller/login/login.router'));
 app.use('/orders', require('./controller/order/order.router'));
 app.use('/addresses', require('./controller/address/address.router'));
-app.use('/users', require('./controller/user/user.router'));
+app.use('/users', authencticateJwt, require('./controller/user/user.router'));
 app.use('/categories', require('./controller/category/category.router'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-
 
 module.exports = app;

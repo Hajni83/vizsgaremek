@@ -1,5 +1,3 @@
-json-server-auth ./server/users.json --w --port 3001
-
 # Vizsgaremek
 # USER STORY
 **Társasjáték webshop - Board game webshop**
@@ -95,3 +93,13 @@ A felhasználónak lehetősége nyílik a szállítási cím megadására.
 Ezek alatt két gomb látható: 
 1. A vásárlás folytatása. Ekkor visszaugrik a főoldalra. 
 2. Fizetek. Felugrik egy pop-up, hogy köszönjük, hogy nálunk vásárolt, a megrendelést adatbázisba mentésre kerül, ahogy a szállítási címet is és visszairányítja a főoldalra a felhasználót.
+
+```sh
+Felhasználók listázása
+```
+
+> A felhasználókat egy bejelentkezett adminisztrátor megtekintheti
+
+*Elfogadási kritérium:*
+
+A felhasználókat egy bejelentkezett adminisztrátor megtekintheti, mindezt az authenticateJWT védi.
