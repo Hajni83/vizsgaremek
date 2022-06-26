@@ -24,7 +24,7 @@ module.exports = (model, populateList = []) => {
             return service.create(req.body)
                 .then(entity => res.json(entity))
                 .catch(err => {
-                    res.statusCode = 501;
+                    res.statusCode = 500;
                     res.json(err);
                 });
         },

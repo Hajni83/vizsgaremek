@@ -11,11 +11,9 @@ export class CartService {
 
   constructor(private productService:ProductService) { }
 
-  addToCart(productId: number) {
+  addToCart(productId?: string) {
     this.productService.getById(productId).subscribe(product=>{
       this.products.push(product);
     });
   }
-
-
 }

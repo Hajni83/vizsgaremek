@@ -28,7 +28,6 @@ test@test.hu | test789
 ​
 ## **5. A végpontok dokumentációja**
 ​
-Pl.:
 Swagger 
 - Az alábbi URL-t kell beírni a böngészőbe: https://localhost:3000/api-docs
 ​
@@ -39,4 +38,12 @@ Swagger
 ​
 [README.md](README.md)
 ​
-​
+​## **Hiányzó feature-k**
+
+- Regisztráció lehetősége
+- Authguard és Roleguard kész, de nincsenek használva
+- AuthenticateJWT token kész, működik is, de nincs olyan végpontom még amire rárakhatnám.
+- Társasjáték létrehozásának a lehetősége
+- Rendelés módosítása
+- Rendelés során az azonos társasjátékok egy sorba kerülhetnének mennyiségi jelöléssel.
+- Sajnos az oldal tetején is csak félkész a kereső doboz.

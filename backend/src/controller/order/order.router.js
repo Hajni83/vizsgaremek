@@ -19,15 +19,8 @@ router.patch('/:id', (req, res, next) => {
     return controller.updateOne(req, res, next);
 });
 
-module.exports = router;
+router.post('/', (req, res, next) => {
+    return controller.create(req, res, next);
+})
 
-/*
-fetch('http://localhost:3000/product', {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${temp1.accessToken}`
-    },
-}).then(r => r.json())
-    .then( d => console.log(d) );
-*/
+module.exports = router;

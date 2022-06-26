@@ -11,22 +11,33 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let row of cartContent">
-          <td><img [src]=row.image></td>
-          <td>{{ row.name }}</td>
-          <td>{{ row.price }} Ft</td>
+        <tr *ngFor="let product of order.products">
+          <td><img [src]=product.image></td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }} Ft</td>
         </tr>
       </tbody>
     </table>
     <h2>Összesen</h2>
     <p>{{total}} Ft</p>
-    <button
-      cButton
-      class="mr-3 mb-3"
-      color="dark"
-      (click)="onClickPay()"
-    >Fizetek
-    </button>
+
+    <form (ngSubmit)="onClickPay()">
+      <div class="form-group">
+        <label for="country">Ország</label>
+        <input cFormControl name="country" [(ngModel)]="address.country" />
+
+        <label for="city">Város</label>
+        <input cFormControl name="name" [(ngModel)]="address.city" />
+
+        <label for="street">Utca</label>
+        <input cFormControl name="street" [(ngModel)]="address.street" />
+
+        <label for="notes">Megjegyzések</label>
+        <input cFormControl name="notes" [(ngModel)]="address.notes" />
+      </div>
+
+      <button type="submit" cButton class="mr-3 mb-3" color="dark">Fizetek</button>
+    </form>
 
     <button cButton color="secondary" routerLink="/" class="mb-3">
       Vásárlás folytatása

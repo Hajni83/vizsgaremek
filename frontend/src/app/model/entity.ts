@@ -1,4 +1,4 @@
 export class Entity {
   [key:string]:any;
-  _id:number = 0;
+  _id?:string = '';
 }

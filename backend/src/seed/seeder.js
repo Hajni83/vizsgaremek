@@ -26,24 +26,6 @@ const categoryModel = require('../model/category.model');
 })();
 
 (async () => {
-    const orderJson = await fsp.readFile(
-        join(__dirname, './orders.json'),
-        'utf-8',
-    );
-    const orders = JSON.parse(orderJson);
-    await orderModel.insertMany(orders);
-})();
-
-(async () => {
-    const addressJson = await fsp.readFile(
-        join(__dirname, './address.json'),
-        'utf-8',
-    );
-    const address = JSON.parse(addressJson);
-    await addressModel.insertMany(address);
-})();
-
-(async () => {
     const categoryJson = await fsp.readFile(
         join(__dirname, './category.json'),
         'utf-8',
