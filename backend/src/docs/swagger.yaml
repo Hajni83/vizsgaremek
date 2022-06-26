@@ -267,6 +267,118 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+  /categories:
+    get:
+      description: Return the categories list
+      responses:
+        '200':
+          description: Return categories successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+  /categories/{_id}:
+    get:
+      description: Return an category
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      responses:
+        '200':
+          description: Returns an Category
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Category'
+    patch:
+      description: Updates an category
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Category'
+      responses:
+        '200':
+          description: Category has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /users:
+    get:
+      description: Return the user list
+      responses:
+        '200':
+          description: Return user successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+  /users/{_id}:
+    get:
+      description: Return an user
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      responses:
+        '200':
+          description: Returns an User
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/User'
+    patch:
+      description: Updates an user
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: User has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
 components:
   schemas:
     Product:
@@ -353,6 +465,55 @@ components:
         street:
           type: string
         notes:
+          type: string
+    Error:
+      type: object
+      required:
+        - message
+        - has_error
+      properties:
+        message:
+          type: string
+        has_error:
+          type: boolean
+    Category:
+      type: object
+      required:
+        - name
+        - description
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+    Error:
+      type: object
+      required:
+        - message
+        - has_error
+      properties:
+        message:
+          type: string
+        has_error:
+          type: boolean
+    User:
+      type: object
+      required:
+        - first_name
+        - last_name
+        - email
+        - role
+        - token
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        role:
+          type: number
+        token:
           type: string
     Error:
       type: object
