@@ -7,7 +7,9 @@
     "http-errors": "^2.0.0",
     "mongoose": "^6.4.0",
     "mongoose-bcrypt": "^1.9.0",
-    "cors":"2.8.5"
+    "swagger-ui-express": "^4.1.6",
+    "cors":"2.8.5",
+    "yamljs": "^0.3.0"
   },
   "name": "backend",
   "version": "1.0.0",

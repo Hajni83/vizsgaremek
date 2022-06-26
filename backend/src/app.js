@@ -3,7 +3,11 @@ const httpErrors = require('http-errors');
 const cors = require('cors');
 const config = require('config');
 const bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
 const mongoose = require('mongoose');
+
+const swaggerDocument = YAML.load('./src/docs/swagger.yaml');
 
 const app = express();
 
@@ -39,6 +43,7 @@ app.use('/orders', authencticateJwt, require('./controller/order/order.router'))
 app.use('/addresses', require('./controller/address/address.router'));
 app.use('/users', require('./controller/user/user.router'));
 app.use('/categories', require('./controller/category/category.router'));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 

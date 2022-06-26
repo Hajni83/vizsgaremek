@@ -1,0 +1,125 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: GameBoard Webshop
+  description: Endpoint Documentation
+servers:
+  - url: http://localhost:3000
+paths:
+  /products:
+    get:
+      description: Return a list of products
+      responses:
+        '200':
+          description: List of products returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+  /products:
+    get:
+      description: Return a list of products
+      responses:
+        '200':
+          description: List of products returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+  /products/{_id}:
+    get:
+      description: Get a product
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      responses:
+        '200':
+          description: Returns a Product
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Product'
+    patch:
+      description: Updates a product
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '200':
+          description: Product has been updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /products/search/{cat}:
+    get:
+      description: Search a product by Category
+      parameters:
+        - in: path
+          name: cat
+          required: true
+          schema: 
+            type: string
+      responses:
+        '200':
+          description: Returns a Product
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: '#/components/schemas/Product'
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - name
+        - description
+        - datasheet
+        - image
+        - price
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        datasheet:
+          type: string
+        image:
+          type: string
+        price:
+          type: number
+    Error:
+      type: object
+      required:
+        - message
+        - has_error
+      properties:
+        message:
+          type: string
+        has_error:
+          type: boolean
+  
