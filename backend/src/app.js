@@ -1,5 +1,4 @@
 const express = require('express');
-const httpErrors = require('http-errors');
 const cors = require('cors');
 const config = require('config');
 const bodyParser = require('body-parser');

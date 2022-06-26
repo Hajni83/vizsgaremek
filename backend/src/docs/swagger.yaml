@@ -125,6 +125,27 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Order'
+    post:
+      description: Creates a new product
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '200':
+          description: Product has been created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error' 
   /orders/{_id}:
     get:
       description: Order a product
@@ -169,27 +190,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-    post:
-      description: Creates a new product
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Order'
-      responses:
-        '200':
-          description: Product has been created successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Order'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error' 
   /addresses:
     get:
       description: Return an address
@@ -202,6 +202,27 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Address'
+    post:
+      description: Creates a new address
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Address'
+      responses:
+        '200':
+          description: Address has been created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Address'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
   /addresses/{_id}:
     get:
       description: Return an address
@@ -236,27 +257,6 @@ paths:
       responses:
         '200':
           description: Address has been updated successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Address'
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-    post:
-      description: Creates a new address
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Address'
-      responses:
-        '200':
-          description: Address has been created successfully
           content:
             application/json:
               schema:

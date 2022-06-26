@@ -1,0 +1,7 @@
+{
+    "database":{
+        "user":"dbUser",
+        "pass":"CEQHXaGO3Dn7KocA",
+        "host":"vizsga-remek-cluster.w78v1.mongodb.net/?retryWrites=true&w=majority"
+    }
+}
