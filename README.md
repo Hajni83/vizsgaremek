@@ -79,7 +79,7 @@ Kártyára kattintás
 *Elfogadási kritérium:*
 
 Bármelyik oldalon (főoldal, családi, stratégiai, party, akció társasjáték) az adott társasjátékot bemutató kártyára kattintva megjelenik egy másik oldalon a társasjáték fényképe nagyobb méretben. Valamint a felhasználó kap egy leírást a játékról, megtalálja az árát és be is tudja egy gomb segítségével tenni a kosárba azt. A gombra kattintással felugrik egy pop-up, melyben megjelenik, hogy sikeresen bekerült a termék a kosárba és a felhasználó választhat, hogy a tovább a kosárhoz vagy a tovább válogatok gombra kattint. A tovább válogatok gombra kattintva eltűnik a felugró ablak. A tovább a kosárhoz gomb esetében pedig a felhasználó a kosár oldalra navigál.
-Amennyiben egy felhasználó bejelentkezik egy adminisztrátori fiókba, akkor lehetősége nyílik az adott társasjáték adatainak megtekintése mellett, azok módosítására is. Ilyenkor az adott társasjáték adatait frissítjük az adatbázisban.
+Amennyiben egy felhasználó bejelentkezik egy adminisztrátori fiókba, akkor lehetősége nyílik az adott társasjáték adatainak megtekintése mellett, azok módosítására is. Ilyenkor az adott társasjáték adatai frissülnek az adatbázisban.
 
 
 ```sh
@@ -94,4 +94,4 @@ Megjelenik a felhasználó előtt táblazatos formában a kiválasztott játék 
 A felhasználónak lehetősége nyílik a szállítási cím megadására.
 Ezek alatt két gomb látható: 
 1. A vásárlás folytatása. Ekkor visszaugrik a főoldalra. 
-2. Fizetek. Felugrik egy pop-up, hogy köszönjük, hogy nálunk vásárolt, a megrendelést adatbázisba mentjük, ahogy a szállítási címet is és visszairányítjuk a főoldalra a felhasználót.
+2. Fizetek. Felugrik egy pop-up, hogy köszönjük, hogy nálunk vásárolt, a megrendelést adatbázisba mentésre kerül, ahogy a szállítási címet is és visszairányítja a főoldalra a felhasználót.
