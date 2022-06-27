@@ -38,6 +38,7 @@ import { ForbiddenComponent } from './page/forbidden/forbidden.component';
 import { JwtInterceptor } from './service/jwt.interceptor';
 import { NavComponent } from './page/nav/nav.component';
 import { AuthService } from './service/auth.service';
+import { UsersComponent } from './page/users/users.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { AuthService } from './service/auth.service';
     CardComponent,
     ForbiddenComponent,
     NavComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

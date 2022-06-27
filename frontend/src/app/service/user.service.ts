@@ -32,7 +32,11 @@ export class UserService {
   }
 
   update(user:User):Observable<User>{
-    const url = `${this.config.apiUrl}${this.entity}/${user.id}`;
+    const url = `${this.config.apiUrl}${this.entity}/${user._id}`;
     return this.http.put<User>(url,user);
+  }
+
+  delete(id?:string) {
+    return this.http.delete(`${this.config.apiUrl}${this.entity}/${id}`);
   }
 }

@@ -26,6 +26,9 @@ E-mail | Jelszó
 ------------ | -------------
 test@test.hu | test789
 ​
+
+A backend-hez integrációs tesztek is tartoznak ezeket elindítani a backend könyvtárból lehet az npm run test paranccsal.
+Az alkalmazás további működésével kapcsolatos információk a [README.md](README.md)-ben találhatók.
 ## **5. A végpontok dokumentációja**
 ​
 Swagger 
@@ -41,7 +44,7 @@ Swagger
 ​## **Hiányzó feature-k**
 
 - Regisztráció lehetősége
-- Authguard és Roleguard kész, de nincsenek használva
+- A Roleguard kész, de nincs használva
 - Társasjáték létrehozásának a lehetősége
 - Rendelés módosítása
 - Rendelés során az azonos társasjátékok egy sorba kerülhetnének mennyiségi jelöléssel.

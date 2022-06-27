@@ -31,6 +31,10 @@ module.exports = (model, populateList = []) => {
         findByCategory(req, res, next) {
             return service.findByCategory(req.params.cat)
                 .then(list => res.json(list));
+        },
+        delete(req, res, next) {
+            return service.delete(req.params.id)
+            .then(entity => res.json(entity));
         }
     };
 };

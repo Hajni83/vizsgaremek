@@ -1,5 +1,5 @@
 ## Standalone:
-npm run start
+npm start
 
 ## with Docker:
 npm run deploy

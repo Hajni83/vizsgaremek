@@ -46,6 +46,11 @@
                 >Akció Játékok</a
               >
             </li>
+            <li class="nav-item" *ngIf="(user$ | async)">
+              <a class="nav-link text-dark" routerLink="/users"
+                >Felhasználók listája</a
+              >
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input

@@ -1,3 +1,4 @@
+import { AuthGuardService } from './service/auth-guard.service';
 import { CardDetailComponent } from './page/card-detail/card-detail.component';
 import { CartComponent } from './page/cart/cart.component';
 import { BoardgamesComponent } from './page/boardgames/boardgames.component';
@@ -6,6 +7,7 @@ import { LoginComponent } from './page/login/login.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UsersComponent } from './page/users/users.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,11 @@ const routes: Routes = [
   {
     path: 'card-detail/:id',
     component: CardDetailComponent,
+  },
+  {
+    path: 'users',
+    canActivate: [AuthGuardService],
+    component: UsersComponent,
   },
   {
     path: '**',

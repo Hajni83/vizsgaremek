@@ -19,4 +19,8 @@ router.patch('/:id', (req, res, next) => {
     return controller.updateOne(req, res, next);
 });
 
+router.delete('/:id', (req, res, next) => {
+    return controller.delete(req, res, next);
+});
+
 module.exports = router;

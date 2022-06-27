@@ -9,6 +9,8 @@ paths:
   /products:
     get:
       description: Return a list of products
+      tags:
+        - Products
       responses:
         '200':
           description: List of products returned successfully
@@ -18,21 +20,11 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Product'
-  # /products:
-  #   get:
-  #     description: Return a list of products
-  #     responses:
-  #       '200':
-  #         description: List of products returned successfully
-  #         content:
-  #           application/json:
-  #             schema:
-  #               type: array
-  #               items:
-  #                 $ref: '#/components/schemas/Product'
   /products/{_id}:
     get:
       description: Get a product
+      tags:
+        - Products
       parameters:
         - in: path
           name: _id
@@ -49,6 +41,8 @@ paths:
                 $ref: '#/components/schemas/Product'
     patch:
       description: Updates a product
+      tags:
+        - Products
       parameters:
         - in: path
           name: _id
@@ -77,6 +71,8 @@ paths:
   /products/search/{cat}:
     get:
       description: Search a product by Category
+      tags:
+        - Products
       parameters:
         - in: path
           name: cat
@@ -94,6 +90,8 @@ paths:
   /login:
     post:
       description: Create a new products
+      tags:
+        - Login
       requestBody:
         required: true
         content:
@@ -116,6 +114,8 @@ paths:
   /orders:
     get:
       description: Return a ordered of products
+      tags:
+        - Orders
       responses:
         '200':
           description: List of  ordered products returned successfully
@@ -127,6 +127,8 @@ paths:
                   $ref: '#/components/schemas/Order'
     post:
       description: Creates a new product
+      tags:
+        - Orders
       requestBody:
         required: true
         content:
@@ -149,6 +151,8 @@ paths:
   /orders/{_id}:
     get:
       description: Order a product
+      tags:
+        - Orders
       parameters:
         - in: path
           name: _id
@@ -165,6 +169,8 @@ paths:
                 $ref: '#/components/schemas/Order'
     patch:
       description: Updates a product
+      tags:
+        - Orders
       parameters:
         - in: path
           name: _id
@@ -193,6 +199,8 @@ paths:
   /addresses:
     get:
       description: Return an address
+      tags:
+        - Addresses
       responses:
         '200':
           description: Return an address successfully
@@ -204,6 +212,8 @@ paths:
                   $ref: '#/components/schemas/Address'
     post:
       description: Creates a new address
+      tags:
+        - Addresses
       requestBody:
         required: true
         content:
@@ -226,6 +236,8 @@ paths:
   /addresses/{_id}:
     get:
       description: Return an address
+      tags:
+        - Addresses
       parameters:
         - in: path
           name: _id
@@ -242,6 +254,8 @@ paths:
                 $ref: '#/components/schemas/Address'
     patch:
       description: Updates an address
+      tags:
+        - Addresses
       parameters:
         - in: path
           name: _id
@@ -270,6 +284,8 @@ paths:
   /categories:
     get:
       description: Return the categories list
+      tags:
+        - Categories
       responses:
         '200':
           description: Return categories successfully
@@ -282,6 +298,8 @@ paths:
   /categories/{_id}:
     get:
       description: Return an category
+      tags:
+        - Categories
       parameters:
         - in: path
           name: _id
@@ -298,6 +316,8 @@ paths:
                 $ref: '#/components/schemas/Category'
     patch:
       description: Updates an category
+      tags:
+        - Categories
       parameters:
         - in: path
           name: _id
@@ -326,6 +346,10 @@ paths:
   /users:
     get:
       description: Return the user list
+      security:
+        - bearerAuth: []
+      tags:
+        - Users
       responses:
         '200':
           description: Return user successfully
@@ -338,6 +362,10 @@ paths:
   /users/{_id}:
     get:
       description: Return an user
+      security:
+        - bearerAuth: []
+      tags:
+        - Users
       parameters:
         - in: path
           name: _id
@@ -353,7 +381,11 @@ paths:
                 type: object
                 $ref: '#/components/schemas/User'
     patch:
-      description: Updates an user
+      description: Updates a user
+      security:
+        - bearerAuth: []
+      tags:
+        - Users
       parameters:
         - in: path
           name: _id
@@ -379,7 +411,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+    delete:
+      description: Delete a user by _id
+      security:
+        - bearerAuth: []
+      tags:
+        - Users
+      parameters:
+        - in: path
+          name: _id
+          required: true
+          schema: 
+            type: string
+      responses:
+        '200':
+          description: User deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
     Product:
       type: object

@@ -95,11 +95,11 @@ Ezek alatt két gomb látható:
 2. Fizetek. Felugrik egy pop-up, hogy köszönjük, hogy nálunk vásárolt, a megrendelést adatbázisba mentésre kerül, ahogy a szállítási címet is és visszairányítja a főoldalra a felhasználót.
 
 ```sh
-Felhasználók listázása
+Felhasználók listázása és törlése
 ```
 
-> A felhasználókat egy bejelentkezett adminisztrátor megtekintheti
+> A felhasználókat egy bejelentkezett adminisztrátor megtekintheti és törölheti
 
 *Elfogadási kritérium:*
 
-A felhasználókat egy bejelentkezett adminisztrátor megtekintheti, mindezt az authenticateJWT védi.
+A felhasználókat egy bejelentkezett adminisztrátor megtekintheti és törölheti. A felület az oldal tetején megjelenő menüből érhető el, mindezt az authenticateJWT és az AuthGuardService védi. 

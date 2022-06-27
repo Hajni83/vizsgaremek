@@ -35,7 +35,8 @@ module.exports = (model, populateList = []) => {
         findByCategory: async (cat) => {
             let categoryId = await Category.findOne({name:cat}).select("_id");
             return model.find({category:categoryId}).populate("category")
-        }
+        },
+        delete: (id) => model.findByIdAndRemove(id),
     };
 };
 

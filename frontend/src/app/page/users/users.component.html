@@ -1,0 +1,25 @@
+<app-header></app-header>
+<c-container>
+  <h1>Felhasználók</h1>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>Vezetéknév</th>
+          <th>Keresztnév</th>
+          <th>email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | async">
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.email }} Ft</td>
+          <td><button cButton color="danger" (click)="onDelete(user._id)">Törlés</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</c-container>
+<app-footer></app-footer>
